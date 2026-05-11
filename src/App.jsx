@@ -555,9 +555,9 @@ export default App;
 
 const EcosystemSection = () => {
   const elements = [
-    { title: "ทรัพยากร", icon: Leaf, desc: "การหมุนเวียนของวัตถุดิบจากธรรมชาติสู่มือผู้เล่น", color: "text-green-500", bg: "bg-green-500/10" },
-    { title: "เศรษฐกิจ", icon: TrendingUp, desc: "ระบบภาษีและการหมุนเวียนเงินตราในรัฐ", color: "text-blue-500", bg: "bg-blue-500/10" },
-    { title: "การผลิต", icon: RefreshCw, desc: "การแปรรูปจากวัตถุดิบเป็นสินค้าที่มีมูลค่าสูง", color: "text-orange-500", bg: "bg-orange-500/10" }
+    { title: "แบบ ECONOMY กลไกลตลาดกลาง", icon: TrendingUp, desc: "ระบบควบคุมราคากลางและการหมุนเวียนเงินตราเพื่อความสมดุลของเซิร์ฟเวอร์", color: "text-green-500", bg: "bg-green-500/10" },
+    { title: "แบบตลาดโลก", icon: Landmark, desc: "การเชื่อมโยงทรัพยากรและการค้าขายในระดับสากล สร้างโอกาสการเติบโตที่เท่าเทียม", color: "text-blue-500", bg: "bg-blue-500/10" },
+    { title: "แบบ Player to Player", icon: Users, desc: "อิสระในการแลกเปลี่ยนและต่อรองระหว่างผู้เล่นโดยตรง ขับเคลื่อนด้วย Story ของชุมชน", color: "text-orange-500", bg: "bg-orange-500/10" }
   ];
 
   return (
@@ -573,7 +573,7 @@ const EcosystemSection = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="relative p-12 rounded-[3rem] bg-gradient-to-br from-green-950/20 to-black/80 border-2 border-green-900/30 overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-96 h-96 bg-green-600/5 blur-[100px] rounded-full" />
-          
+
           <div className="relative z-10 grid md:grid-cols-3 gap-12">
             {elements.map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center group">
@@ -628,7 +628,7 @@ const MarketplaceSection = () => {
             <span className="text-yellow-500 font-black uppercase tracking-widest text-sm">Trading Post</span>
           </div>
           <h3 className="text-4xl font-black text-white mb-6 uppercase leading-tight">
-            ศูนย์กลาง<br/>การค้าขายของรัฐ
+            ศูนย์กลาง<br />การค้าขายของรัฐ
           </h3>
           <p className="text-orange-100/60 text-lg leading-relaxed mb-8 font-medium">
             เราสร้างระบบตลาดที่ทันสมัยแต่ยังคงกลิ่นอายความดั้งเดิม เพื่อให้ผู้เล่นทุกคนสามารถเป็นพ่อค้าและสร้างอาณาจักรธุรกิจของตนเองได้
@@ -658,29 +658,29 @@ const MarketplaceSection = () => {
 };
 const GameplaySection = () => {
   const topics = [
-    { 
-      title: "การทำอาวุธ", 
-      icon: Hammer, 
-      color: "from-orange-500 to-orange-600", 
-      desc: "ออกแบบมาให้ 'หาของง่ายตีของยาก' เพราะผมมองว่า ของหายาก ทำให้คนรู้สึกว่าการอยู่ในเซิร์ฟเวอร์ยากเกินไป แต่จะไปจำกัด % การตีปืนของปืนในแต่ละ Tier แทน" 
+    {
+      title: "การทำอาวุธ",
+      icon: Hammer,
+      color: "from-orange-500 to-orange-600",
+      desc: "ออกแบบมาให้ 'หาของง่ายตีของยาก' เพราะผมมองว่า ของหายาก ทำให้คนรู้สึกว่าการอยู่ในเซิร์ฟเวอร์ยากเกินไป แต่จะไปจำกัด % การตีปืนของปืนในแต่ละ Tier แทน"
     },
-    { 
-      title: "ระดับปืน ตามขอบเขตโซนต่างๆ", 
-      icon: Target, 
-      color: "from-yellow-500 to-yellow-600", 
-      desc: "การกำหนดขอบเขตการใช้อาวุธในโซนต่างๆ ที่กำหนดให้ผู้เล่นสามารถเลือกได้ว่า ตอนนี้ระดับของตัวเองอยู่ในระดับโซนไหน อาวุธที่ผู้เล่นจะต้องสู้ก็จะแตกต่างกันไปในแต่ละโซน" 
+    {
+      title: "ระดับปืน ตามขอบเขตโซนต่างๆ",
+      icon: Target,
+      color: "from-yellow-500 to-yellow-600",
+      desc: "การกำหนดขอบเขตการใช้อาวุธในโซนต่างๆ ที่กำหนดให้ผู้เล่นสามารถเลือกได้ว่า ตอนนี้ระดับของตัวเองอยู่ในระดับโซนไหน อาวุธที่ผู้เล่นจะต้องสู้ก็จะแตกต่างกันไปในแต่ละโซน"
     },
-    { 
-      title: "ระบบการทำงานผิดกฎหมาย", 
-      icon: Skull, 
-      color: "from-red-500 to-red-600", 
-      desc: "หากมีการกระทำใดๆ เช่น การขุดหลุมศพ เพื่อหาของทำอาวุธ จะให้มีแจ้งเตือนเพื่อผู้เล่นที่อยู่ในโซน เพิ่มความต้องการสู้ของผู้เล่นมากขึ้น และทุกครั้งที่มีผู้เล่นทำงานผิดกฎหมายจุดนั้นๆ ไปแล้ว จะนับถอยหลัง 30 นาที สำหรับเวลาทั่วไป (3.00 น. ถึง 17.00 น.) และจะปรับจาก 30 มาเป็น 20 ในเวลา Peak Time (18.00 น. ถึง 2.00 น.)" 
+    {
+      title: "ระบบการทำงานผิดกฎหมาย",
+      icon: Skull,
+      color: "from-red-500 to-red-600",
+      desc: "หากมีการกระทำใดๆ เช่น การขุดหลุมศพ เพื่อหาของทำอาวุธ จะให้มีแจ้งเตือนเพื่อผู้เล่นที่อยู่ในโซน เพิ่มความต้องการสู้ของผู้เล่นมากขึ้น และทุกครั้งที่มีผู้เล่นทำงานผิดกฎหมายจุดนั้นๆ ไปแล้ว จะนับถอยหลัง 30 นาที สำหรับเวลาทั่วไป (3.00 น. ถึง 17.00 น.) และจะปรับจาก 30 มาเป็น 20 ในเวลา Peak Time (18.00 น. ถึง 2.00 น.)"
     },
-    { 
-      title: "กฎการเล่น", 
-      icon: ScrollText, 
-      color: "from-purple-500 to-purple-600", 
-      desc: "ออกแบบมาให้ใช้กฎเฉพาะในเขตนั้นๆ แยกไปเลย โดยไม่นับรวมกับกฎ RP เพื่อตัดปัญหาการนำกฎบังคับข้ออื่นๆ มารวมกันและเกิดปัญหาดราม่า ทำให้ผู้เล่นคนอื่นได้รับผลกระทบ และให้ผู้เล่นที่ชอบการยิงในรูปแบบ Gameplay ลื่นไหล ดังนั้นการปล่อยอิสระให้ผู้เล่นในระดับที่ควบคุมได้ จะช่วยให้ผู้เล่นเล่นแล้วมีความสุขในระยะยาว" 
+    {
+      title: "กฎการเล่น",
+      icon: ScrollText,
+      color: "from-purple-500 to-purple-600",
+      desc: "ออกแบบมาให้ใช้กฎเฉพาะในเขตนั้นๆ แยกไปเลย โดยไม่นับรวมกับกฎ RP เพื่อตัดปัญหาการนำกฎบังคับข้ออื่นๆ มารวมกันและเกิดปัญหาดราม่า ทำให้ผู้เล่นคนอื่นได้รับผลกระทบ และให้ผู้เล่นที่ชอบการยิงในรูปแบบ Gameplay ลื่นไหล ดังนั้นการปล่อยอิสระให้ผู้เล่นในระดับที่ควบคุมได้ จะช่วยให้ผู้เล่นเล่นแล้วมีความสุขในระยะยาว"
     },
   ];
 
@@ -696,10 +696,10 @@ const GameplaySection = () => {
 
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-20">
-          
+
           {/* Left Side: Central Hub (Thief Land) */}
           <div className="lg:w-1/3 flex flex-col justify-center items-center lg:items-end relative">
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.05 }}
               className="relative p-1 rounded-[3rem] bg-gradient-to-br from-red-600 to-red-900 shadow-[0_0_50px_rgba(220,38,38,0.3)] z-20"
             >
@@ -763,7 +763,7 @@ const GameplaySection = () => {
                   <div className={`w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br ${topic.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
                     <topic.icon className="w-8 h-8 text-white" />
                   </div>
-                  
+
                   <div className="relative z-10">
                     <h4 className="text-xl font-black text-white uppercase tracking-wider mb-2 group-hover:text-red-500 transition-colors">{topic.title}</h4>
                     <p className="text-orange-100/40 text-sm leading-relaxed mb-4">{topic.desc}</p>
@@ -779,7 +779,7 @@ const GameplaySection = () => {
         </div>
 
         <div className="flex justify-center mt-20 lg:mt-32">
-          <motion.div 
+          <motion.div
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ repeat: Infinity, duration: 3 }}
             className="flex items-center gap-4 text-red-500/30 uppercase font-black tracking-[0.5em] text-xs"
