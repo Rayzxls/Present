@@ -564,89 +564,82 @@ const EcosystemSection = () => {
         <div className="w-32 h-2 bg-green-600 rounded-full" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 relative">
+      <div className="max-w-7xl mx-auto px-4 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative z-10">
           
           {/* Column 1: Economy Central */}
-          <div className="flex flex-col items-center gap-12">
-            <motion.div 
-              whileHover={{ y: -5 }}
-              className="w-full p-8 rounded-[2.5rem] bg-gradient-to-br from-green-500/20 to-black border-2 border-green-500/30 text-center shadow-xl"
-            >
-              <span className="text-green-500 font-black text-sm uppercase tracking-widest mb-2 block">01</span>
-              <h3 className="text-2xl font-black text-white uppercase tracking-wider">
-                แบบ ECONOMY<br/>กลไกตลาดกลาง
-              </h3>
+          <div className="flex flex-col items-center gap-8">
+            <motion.div whileHover={{ y: -5 }} className="w-full p-6 rounded-[2rem] bg-gradient-to-br from-green-500/20 to-black border-2 border-green-500/30 text-center shadow-xl">
+              <span className="text-green-500 font-black text-xs uppercase tracking-widest mb-1 block">01</span>
+              <h3 className="text-xl font-black text-white uppercase">ECONOMY กลไกตลาดกลาง</h3>
             </motion.div>
-
-            {/* Downward Arrow */}
-            <motion.div 
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="text-green-500/50"
-            >
-              <ChevronRight className="w-12 h-12 rotate-90" />
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="w-full p-12 rounded-[3rem] bg-black border-4 border-green-500 shadow-[0_0_50px_rgba(34,197,94,0.1)] text-center relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent pointer-events-none" />
-              <TrendingUp className="w-12 h-12 text-green-500 mb-6 mx-auto" />
-              <h4 className="text-3xl font-black text-white uppercase leading-tight mb-4">
-                ทุกอาชีพ มีจุดขายที่เดียวกัน<br/>
-                คือจุด <span className="text-green-500">Economy กลาง</span>
-              </h4>
-              <p className="text-orange-100/40 text-sm font-medium">Standardized Central Economic Hub</p>
+            <ChevronRight className="w-8 h-8 text-green-500/30 rotate-90" />
+            <motion.div className="w-full p-8 rounded-[2.5rem] bg-black border-2 border-green-500/50 text-center relative overflow-hidden h-full">
+              <h4 className="text-lg font-black text-white uppercase leading-tight">ทุกอาชีพ มีจุดขายที่เดียวกัน คือจุด Economy กลาง</h4>
             </motion.div>
           </div>
 
           {/* Column 2: Global Market */}
-          <div className="flex flex-col items-center gap-12">
-            <motion.div 
-              whileHover={{ y: -5 }}
-              className="w-full p-8 rounded-[2.5rem] bg-gradient-to-br from-blue-500/20 to-black border-2 border-blue-500/30 text-center shadow-xl"
-            >
-              <span className="text-blue-500 font-black text-sm uppercase tracking-widest mb-2 block">02</span>
-              <h3 className="text-2xl font-black text-white uppercase tracking-wider">
-                แบบ ตลาดโลก
+          <div className="flex flex-col items-center gap-8">
+            <motion.div whileHover={{ y: -5 }} className="w-full p-6 rounded-[2rem] bg-gradient-to-br from-blue-500/20 to-black border-2 border-blue-500/30 text-center shadow-xl">
+              <span className="text-blue-500 font-black text-xs uppercase tracking-widest mb-1 block">02</span>
+              <h3 className="text-xl font-black text-white uppercase">แบบ ตลาดโลก</h3>
+            </motion.div>
+            <ChevronRight className="w-8 h-8 text-blue-500/30 rotate-90" />
+            <motion.div className="w-full p-8 rounded-[2.5rem] bg-black border-2 border-blue-500/50 text-center relative overflow-hidden h-full">
+              <h4 className="text-lg font-black text-white uppercase leading-tight">ออกแบบมาเพื่อให้ในแต่ละอาชีพ มาวางสินค้าของตัวเองสู่ตลาด PLAYER</h4>
+            </motion.div>
+          </div>
+
+          {/* Column 3: Player to Player */}
+          <div className="flex flex-col items-center gap-8">
+            <motion.div whileHover={{ y: -5 }} className="w-full p-6 rounded-[2rem] bg-gradient-to-br from-orange-500/20 to-black border-2 border-orange-500/30 text-center shadow-xl">
+              <span className="text-orange-500 font-black text-xs uppercase tracking-widest mb-1 block">03</span>
+              <h3 className="text-xl font-black text-white uppercase">แบบ Player to Player</h3>
+            </motion.div>
+            <ChevronRight className="w-8 h-8 text-orange-500/30 rotate-90" />
+            <motion.div className="w-full p-8 rounded-[2.5rem] bg-black border-2 border-orange-500/50 text-center relative overflow-hidden h-full">
+              <h4 className="text-lg font-black text-white uppercase leading-tight">อิสระในการแลกเปลี่ยน สร้าง Story และความสัมพันธ์ในชุมชน</h4>
+            </motion.div>
+          </div>
+
+        </div>
+
+        {/* Convergence SVG Arrows */}
+        <div className="relative h-32 w-full hidden md:block">
+          <svg className="w-full h-full" viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path d="M 166 0 Q 166 50, 500 100" stroke="#22c55e" strokeWidth="2" fill="none" opacity="0.3" strokeDasharray="5 5" />
+            <path d="M 500 0 L 500 100" stroke="#3b82f6" strokeWidth="2" fill="none" opacity="0.3" strokeDasharray="5 5" />
+            <path d="M 834 0 Q 834 50, 500 100" stroke="#f97316" strokeWidth="2" fill="none" opacity="0.3" strokeDasharray="5 5" />
+          </svg>
+        </div>
+
+        {/* Mobile Connector */}
+        <div className="md:hidden flex flex-col items-center gap-4 py-8">
+          <ChevronRight className="w-8 h-8 text-white/20 rotate-90" />
+        </div>
+
+        {/* Final Convergence Point: Landmark */}
+        <div className="flex justify-center relative">
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="w-full max-w-2xl p-1 rounded-[3rem] bg-gradient-to-br from-yellow-400 via-yellow-600 to-yellow-900 shadow-[0_0_70px_rgba(234,179,8,0.2)]"
+          >
+            <div className="bg-black rounded-[2.9rem] p-12 border-4 border-yellow-500/30 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent pointer-events-none" />
+              <Landmark className="w-16 h-16 text-yellow-500 mb-6 mx-auto animate-pulse" />
+              <h3 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 [text-shadow:0_0_20px_rgba(234,179,8,0.5)]">
+                LANDMARK
               </h3>
-            </motion.div>
-
-            {/* Downward Arrow */}
-            <motion.div 
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
-              className="text-blue-500/50"
-            >
-              <ChevronRight className="w-12 h-12 rotate-90" />
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="w-full p-12 rounded-[3rem] bg-black border-4 border-blue-500 shadow-[0_0_50px_rgba(59,130,246,0.1)] text-center relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none" />
-              <Users className="w-12 h-12 text-blue-500 mb-6 mx-auto" />
-              <h4 className="text-3xl font-black text-white uppercase leading-tight mb-4">
-                ออกแบบมาเพื่อให้ในแต่ละอาชีพ<br/>
-                มาวางสินค้าของตัวเองสู่ตลาด <span className="text-blue-500">PLAYER</span>
-              </h4>
-              <p className="text-orange-100/40 text-sm font-medium">Direct Peer-to-Peer Trading Evolution</p>
-            </motion.div>
-          </div>
-
+              <p className="text-yellow-100/70 text-xl font-bold uppercase tracking-[0.2em] mb-4">The Golden Prosperity</p>
+              <div className="w-48 h-1 bg-yellow-500/50 mx-auto rounded-full" />
+              <p className="mt-8 text-orange-100/60 font-medium max-w-lg mx-auto leading-relaxed">
+                "จุดยุทธศาสตร์และศูนย์กลางความเจริญของรัฐ ที่ซึ่งทุกเส้นทางเศรษฐกิจมาบรรจบกันเพื่อความมั่งคั่งที่ยั่งยืน"
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Decorative Background Connector */}
-        <div className="mt-24 flex justify-center opacity-20">
-          <div className="flex items-center gap-8 text-white/50">
-            <div className="w-32 h-0.5 bg-gradient-to-r from-transparent to-white" />
-            <span className="text-xs font-black uppercase tracking-[0.5em]">Integrated Economic Flow</span>
-            <div className="w-32 h-0.5 bg-gradient-to-l from-transparent to-white" />
-          </div>
-        </div>
       </div>
     </div>
   );
