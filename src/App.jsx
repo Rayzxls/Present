@@ -554,49 +554,97 @@ const GovernanceSection = () => {
 export default App;
 
 const EcosystemSection = () => {
-  const elements = [
-    { title: "แบบ ECONOMY กลไกลตลาดกลาง", icon: TrendingUp, desc: "ระบบควบคุมราคากลางและการหมุนเวียนเงินตราเพื่อความสมดุลของเซิร์ฟเวอร์", color: "text-green-500", bg: "bg-green-500/10" },
-    { title: "แบบตลาดโลก", icon: Landmark, desc: "การเชื่อมโยงทรัพยากรและการค้าขายในระดับสากล สร้างโอกาสการเติบโตที่เท่าเทียม", color: "text-blue-500", bg: "bg-blue-500/10" },
-    { title: "แบบ Player to Player", icon: Users, desc: "อิสระในการแลกเปลี่ยนและต่อรองระหว่างผู้เล่นโดยตรง ขับเคลื่อนด้วย Story ของชุมชน", color: "text-orange-500", bg: "bg-orange-500/10" }
-  ];
-
   return (
     <div className="w-full mb-40 text-left">
-      <div className="flex flex-col items-center mb-16">
+      <div className="flex flex-col items-center mb-24">
         <div className="flex items-center gap-6 mb-4">
           <Leaf className="w-16 h-16 text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
-          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#1a2e05] uppercase">Ecosystem</h2>
+          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#1a2e05] uppercase text-center">Economy Ecosystem</h2>
         </div>
         <div className="w-32 h-2 bg-green-600 rounded-full" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4">
-        <div className="relative p-12 rounded-[3rem] bg-gradient-to-br from-green-950/20 to-black/80 border-2 border-green-900/30 overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-green-600/5 blur-[100px] rounded-full" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 relative">
+          
+          {/* Column 1: Economy Central */}
+          <div className="flex flex-col items-center gap-12">
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="w-full p-8 rounded-[2.5rem] bg-gradient-to-br from-green-500/20 to-black border-2 border-green-500/30 text-center shadow-xl"
+            >
+              <span className="text-green-500 font-black text-sm uppercase tracking-widest mb-2 block">01</span>
+              <h3 className="text-2xl font-black text-white uppercase tracking-wider">
+                แบบ ECONOMY<br/>กลไกตลาดกลาง
+              </h3>
+            </motion.div>
 
-          <div className="relative z-10 grid md:grid-cols-3 gap-12">
-            {elements.map((item, i) => (
-              <div key={i} className="flex flex-col items-center text-center group">
-                <div className={`w-24 h-24 rounded-3xl ${item.bg} flex items-center justify-center mb-8 border border-white/5 group-hover:scale-110 transition-transform duration-500`}>
-                  <item.icon className={`w-12 h-12 ${item.color}`} />
-                </div>
-                <h3 className="text-2xl font-black text-white mb-4 uppercase tracking-widest">{item.title}</h3>
-                <p className="text-orange-100/60 leading-relaxed font-medium">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+            {/* Downward Arrow */}
+            <motion.div 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="text-green-500/50"
+            >
+              <ChevronRight className="w-12 h-12 rotate-90" />
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="w-full p-12 rounded-[3rem] bg-black border-4 border-green-500 shadow-[0_0_50px_rgba(34,197,94,0.1)] text-center relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent pointer-events-none" />
+              <TrendingUp className="w-12 h-12 text-green-500 mb-6 mx-auto" />
+              <h4 className="text-3xl font-black text-white uppercase leading-tight mb-4">
+                ทุกอาชีพ มีจุดขายที่เดียวกัน<br/>
+                คือจุด <span className="text-green-500">Economy กลาง</span>
+              </h4>
+              <p className="text-orange-100/40 text-sm font-medium">Standardized Central Economic Hub</p>
+            </motion.div>
           </div>
 
-          {/* Connection Line */}
-          <div className="mt-16 pt-16 border-t border-white/5 flex justify-center">
-            <div className="flex items-center gap-8 text-green-500/50">
-              <span className="text-xs font-black uppercase tracking-[0.5em]">Sustainable World</span>
-              <div className="flex gap-2">
-                {[1, 2, 3].map(n => <div key={n} className="w-2 h-2 rounded-full bg-green-500/20" />)}
-              </div>
-              <span className="text-xs font-black uppercase tracking-[0.5em]">Economic Balance</span>
-            </div>
+          {/* Column 2: Global Market */}
+          <div className="flex flex-col items-center gap-12">
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="w-full p-8 rounded-[2.5rem] bg-gradient-to-br from-blue-500/20 to-black border-2 border-blue-500/30 text-center shadow-xl"
+            >
+              <span className="text-blue-500 font-black text-sm uppercase tracking-widest mb-2 block">02</span>
+              <h3 className="text-2xl font-black text-white uppercase tracking-wider">
+                แบบ ตลาดโลก
+              </h3>
+            </motion.div>
+
+            {/* Downward Arrow */}
+            <motion.div 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
+              className="text-blue-500/50"
+            >
+              <ChevronRight className="w-12 h-12 rotate-90" />
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="w-full p-12 rounded-[3rem] bg-black border-4 border-blue-500 shadow-[0_0_50px_rgba(59,130,246,0.1)] text-center relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none" />
+              <Users className="w-12 h-12 text-blue-500 mb-6 mx-auto" />
+              <h4 className="text-3xl font-black text-white uppercase leading-tight mb-4">
+                ออกแบบมาเพื่อให้ในแต่ละอาชีพ<br/>
+                มาวางสินค้าของตัวเองสู่ตลาด <span className="text-blue-500">PLAYER</span>
+              </h4>
+              <p className="text-orange-100/40 text-sm font-medium">Direct Peer-to-Peer Trading Evolution</p>
+            </motion.div>
+          </div>
+
+        </div>
+
+        {/* Decorative Background Connector */}
+        <div className="mt-24 flex justify-center opacity-20">
+          <div className="flex items-center gap-8 text-white/50">
+            <div className="w-32 h-0.5 bg-gradient-to-r from-transparent to-white" />
+            <span className="text-xs font-black uppercase tracking-[0.5em]">Integrated Economic Flow</span>
+            <div className="w-32 h-0.5 bg-gradient-to-l from-transparent to-white" />
           </div>
         </div>
       </div>
