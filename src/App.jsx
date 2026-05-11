@@ -683,8 +683,7 @@ const EcosystemSection = () => {
 const MarketplaceSection = () => {
   const features = [
     { title: "ตลาด ประมูลสินค้า ประจำวัน", desc: "มีตลาด ประมูลสินค้าให้ผู้เล่นมาประมูลสินค้า ที่เอาไว้ใช้ประมูลสินค้าระหว่าง Player to Player", icon: BarChart3 },
-    { title: "ตลาดกลางเมือง", icon: Store, desc: "แหล่งรวมสินค้าอุปโภคบริโภคพื้นฐาน" },
-    { title: "แลกเปลี่ยนเงิน", icon: Coins, desc: "ระบบการเงินที่มั่นคงและปลอดภัย" }
+    { title: "ตลาดมืด", icon: Skull, desc: "จะสุ่มพื้นที่ ตลาดมืด มา ในแต่ละรอบสินค้าจะไม่เหมือนกัน และมีสินค้าจำกัด" }
   ];
 
   return (
