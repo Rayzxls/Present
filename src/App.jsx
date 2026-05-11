@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Flame, Star, Map, ChevronRight, Axe, Pickaxe, Sprout, Hammer, Home,
   Tractor, Utensils, Shield, Target, ShoppingCart, Gem, Crosshair,
-  Briefcase, Skull, Wrench, FlaskConical, Crown, Users, Landmark
+  Briefcase, Skull, Wrench, FlaskConical, Crown, Users, Landmark,
+  Gamepad2, PlayCircle, ScrollText, Zap, AlertCircle
 } from 'lucide-react';
 
 function App() {
@@ -203,6 +204,9 @@ function App() {
 
         {/* Governance Section */}
         <GovernanceSection />
+
+        {/* Gameplay Section */}
+        <GameplaySection />
 
       </motion.div>
     </div>
@@ -541,3 +545,104 @@ const GovernanceSection = () => {
 };
 
 export default App;
+const GameplaySection = () => {
+  const topics = [
+    { title: "วิธีการเล่น", icon: PlayCircle, color: "from-blue-500 to-blue-600", desc: "เรียนรู้พื้นฐานการเอาชีวิตรอดในแดนเถื่อน" },
+    { title: "ประเภทงานผิดกฎหมาย", icon: Skull, color: "from-red-500 to-red-600", desc: "ปล้นธนาคาร ชิงรถม้า และภารกิจนอกกฎหมาย" },
+    { title: "การทำอาวุธ", icon: Hammer, color: "from-orange-500 to-orange-600", desc: "คราฟต์อาวุธระดับสูงเพื่อการป้องกันตัว" },
+    { title: "Tier ปืน", icon: Target, color: "from-yellow-500 to-yellow-600", desc: "ลำดับความหายากและประสิทธิภาพของอาวุธ" },
+    { title: "แก้ไขปัญหา", icon: AlertCircle, color: "from-green-500 to-green-600", desc: "ระบบช่วยเหลือเมื่อพบปัญหาในการเล่น" },
+    { title: "กฎการเล่น", icon: ScrollText, color: "from-purple-500 to-purple-600", desc: "ข้อบังคับพื้นฐานเพื่อความสนุกที่เท่าเทียม" },
+  ];
+
+  return (
+    <div className="w-full mb-40 text-left">
+      <div className="flex flex-col items-center mb-24">
+        <div className="flex items-center gap-6 mb-4">
+          <Gamepad2 className="w-16 h-16 text-red-500 drop-shadow-[0_0_10px_rgba(220,38,38,0.5)]" />
+          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#4a0d0d] uppercase text-center">Gameplay System</h2>
+        </div>
+        <div className="w-32 h-2 bg-red-600 rounded-full" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-20">
+          
+          {/* Left Side: Central Hub */}
+          <div className="lg:w-1/3 flex flex-col justify-center items-center lg:items-end relative">
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="relative p-1 rounded-[3rem] bg-gradient-to-br from-red-600 to-red-900 shadow-[0_0_50px_rgba(220,38,38,0.3)] z-20"
+            >
+              <div className="bg-black rounded-[2.9rem] px-12 py-16 border-4 border-red-500/30 flex flex-col items-center text-center">
+                <Zap className="w-16 h-16 text-red-500 mb-6 animate-pulse" />
+                <h3 className="text-4xl md:text-5xl font-black text-white uppercase leading-tight">
+                  ฟามโซน<br/><span className="text-red-500">แดนเถื่อน</span>
+                </h3>
+                <div className="mt-8 px-4 py-2 bg-red-600/20 rounded-full border border-red-500/30">
+                  <span className="text-red-500 font-bold text-xs uppercase tracking-widest">Main Hub Node</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Horizontal Connectors Background (Desktop) */}
+            <div className="absolute top-1/2 right-[-5rem] w-20 h-0.5 bg-gradient-to-r from-red-600 to-transparent hidden lg:block" />
+          </div>
+
+          {/* Right Side: Related Topics */}
+          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+            {/* Visual Flow Lines (Desktop Only) */}
+            <div className="absolute top-1/2 left-[-5rem] w-20 h-full -translate-y-1/2 pointer-events-none hidden lg:block">
+              <svg className="w-full h-full" viewBox="0 0 100 400" preserveAspectRatio="none">
+                <path d="M 0 200 C 50 200, 50 50, 100 50" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.3" />
+                <path d="M 0 200 C 50 200, 50 150, 100 150" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.3" />
+                <path d="M 0 200 C 50 200, 50 250, 100 250" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.3" />
+                <path d="M 0 200 C 50 200, 50 350, 100 350" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.3" />
+              </svg>
+            </div>
+
+            {topics.map((topic, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative"
+              >
+                <div className="relative overflow-hidden rounded-[2.5rem] bg-black/40 backdrop-blur-md border-2 border-white/5 group-hover:border-red-500/50 transition-all duration-500 p-8 shadow-xl flex items-start gap-6">
+                  <div className={`w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br ${topic.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
+                    <topic.icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <h4 className="text-xl font-black text-white uppercase tracking-wider mb-2 group-hover:text-red-500 transition-colors">{topic.title}</h4>
+                    <p className="text-orange-100/40 text-sm leading-relaxed mb-4">{topic.desc}</p>
+                    <div className="w-8 h-1 bg-red-600/30 group-hover:w-16 transition-all" />
+                  </div>
+
+                  {/* Decorative background glow */}
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${topic.color} opacity-0 group-hover:opacity-10 blur-3xl transition-opacity`} />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+
+        {/* Decorative Indicator */}
+        <div className="flex justify-center mt-20 lg:mt-32">
+          <motion.div 
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ repeat: Infinity, duration: 3 }}
+            className="flex items-center gap-4 text-red-500/30 uppercase font-black tracking-[0.5em] text-xs"
+          >
+            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent to-red-500/50" />
+            End of relationship flow
+            <div className="w-20 h-0.5 bg-gradient-to-l from-transparent to-red-500/50" />
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+};
