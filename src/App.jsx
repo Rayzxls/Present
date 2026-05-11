@@ -4,7 +4,8 @@ import {
   Flame, Star, Map, ChevronRight, Axe, Pickaxe, Sprout, Hammer, Home,
   Tractor, Utensils, Shield, Target, ShoppingCart, Gem, Crosshair,
   Briefcase, Skull, Wrench, FlaskConical, Crown, Users, Landmark,
-  Gamepad2, PlayCircle, ScrollText, Zap, AlertCircle
+  Gamepad2, PlayCircle, ScrollText, Zap, AlertCircle,
+  Leaf, RefreshCw, Store, TrendingUp, Coins, BarChart3
 } from 'lucide-react';
 
 function App() {
@@ -207,6 +208,12 @@ function App() {
 
         {/* Gameplay Section */}
         <GameplaySection />
+
+        {/* Ecosystem Section */}
+        <EcosystemSection />
+
+        {/* Marketplace Section */}
+        <MarketplaceSection />
 
       </motion.div>
     </div>
@@ -545,6 +552,110 @@ const GovernanceSection = () => {
 };
 
 export default App;
+
+const EcosystemSection = () => {
+  const elements = [
+    { title: "ทรัพยากร", icon: Leaf, desc: "การหมุนเวียนของวัตถุดิบจากธรรมชาติสู่มือผู้เล่น", color: "text-green-500", bg: "bg-green-500/10" },
+    { title: "เศรษฐกิจ", icon: TrendingUp, desc: "ระบบภาษีและการหมุนเวียนเงินตราในรัฐ", color: "text-blue-500", bg: "bg-blue-500/10" },
+    { title: "การผลิต", icon: RefreshCw, desc: "การแปรรูปจากวัตถุดิบเป็นสินค้าที่มีมูลค่าสูง", color: "text-orange-500", bg: "bg-orange-500/10" }
+  ];
+
+  return (
+    <div className="w-full mb-40 text-left">
+      <div className="flex flex-col items-center mb-16">
+        <div className="flex items-center gap-6 mb-4">
+          <Leaf className="w-16 h-16 text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
+          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#1a2e05] uppercase">Ecosystem</h2>
+        </div>
+        <div className="w-32 h-2 bg-green-600 rounded-full" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="relative p-12 rounded-[3rem] bg-gradient-to-br from-green-950/20 to-black/80 border-2 border-green-900/30 overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-green-600/5 blur-[100px] rounded-full" />
+          
+          <div className="relative z-10 grid md:grid-cols-3 gap-12">
+            {elements.map((item, i) => (
+              <div key={i} className="flex flex-col items-center text-center group">
+                <div className={`w-24 h-24 rounded-3xl ${item.bg} flex items-center justify-center mb-8 border border-white/5 group-hover:scale-110 transition-transform duration-500`}>
+                  <item.icon className={`w-12 h-12 ${item.color}`} />
+                </div>
+                <h3 className="text-2xl font-black text-white mb-4 uppercase tracking-widest">{item.title}</h3>
+                <p className="text-orange-100/60 leading-relaxed font-medium">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Connection Line */}
+          <div className="mt-16 pt-16 border-t border-white/5 flex justify-center">
+            <div className="flex items-center gap-8 text-green-500/50">
+              <span className="text-xs font-black uppercase tracking-[0.5em]">Sustainable World</span>
+              <div className="flex gap-2">
+                {[1, 2, 3].map(n => <div key={n} className="w-2 h-2 rounded-full bg-green-500/20" />)}
+              </div>
+              <span className="text-xs font-black uppercase tracking-[0.5em]">Economic Balance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const MarketplaceSection = () => {
+  const features = [
+    { title: "ระบบประมูล", desc: "ซื้อขายสินค้าหายากด้วยราคาที่คุณกำหนดเอง", icon: BarChart3 },
+    { title: "ตลาดกลางเมือง", icon: Store, desc: "แหล่งรวมสินค้าอุปโภคบริโภคพื้นฐาน" },
+    { title: "แลกเปลี่ยนเงิน", icon: Coins, desc: "ระบบการเงินที่มั่นคงและปลอดภัย" }
+  ];
+
+  return (
+    <div className="w-full mb-40 text-left">
+      <div className="flex flex-col items-center mb-16">
+        <div className="flex items-center gap-6 mb-4">
+          <Store className="w-16 h-16 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
+          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#4a3a05] uppercase">ตลาดแลกเปลี่ยนสินค้า</h2>
+        </div>
+        <div className="w-32 h-2 bg-yellow-500 rounded-full" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+        <div className="p-12 rounded-[3rem] bg-black/40 backdrop-blur-xl border-2 border-yellow-500/20 flex flex-col justify-center">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-1 bg-yellow-500" />
+            <span className="text-yellow-500 font-black uppercase tracking-widest text-sm">Trading Post</span>
+          </div>
+          <h3 className="text-4xl font-black text-white mb-6 uppercase leading-tight">
+            ศูนย์กลาง<br/>การค้าขายของรัฐ
+          </h3>
+          <p className="text-orange-100/60 text-lg leading-relaxed mb-8 font-medium">
+            เราสร้างระบบตลาดที่ทันสมัยแต่ยังคงกลิ่นอายความดั้งเดิม เพื่อให้ผู้เล่นทุกคนสามารถเป็นพ่อค้าและสร้างอาณาจักรธุรกิจของตนเองได้
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <div className="px-4 py-2 bg-yellow-500/10 rounded-full border border-yellow-500/30 text-yellow-500 text-xs font-black uppercase">P2P Trading</div>
+            <div className="px-4 py-2 bg-yellow-500/10 rounded-full border border-yellow-500/30 text-yellow-500 text-xs font-black uppercase">Global Auction</div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {features.map((f, i) => (
+            <div key={i} className="group p-8 rounded-[2rem] bg-gradient-to-r from-yellow-950/20 to-black/60 border border-white/5 hover:border-yellow-500/30 transition-all duration-500 flex items-center gap-6">
+              <div className="w-14 h-14 rounded-2xl bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20 group-hover:bg-yellow-500 transition-colors">
+                <f.icon className="w-7 h-7 text-yellow-500 group-hover:text-black transition-colors" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white uppercase tracking-wide mb-1">{f.title}</h4>
+                <p className="text-orange-100/40 text-sm">{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 const GameplaySection = () => {
   const topics = [
     { 
@@ -565,7 +676,12 @@ const GameplaySection = () => {
       color: "from-red-500 to-red-600", 
       desc: "หากมีการกระทำใดๆ เช่น การขุดหลุมศพ เพื่อหาของทำอาวุธ จะให้มีแจ้งเตือนเพื่อผู้เล่นที่อยู่ในโซน เพิ่มความต้องการสู้ของผู้เล่นมากขึ้น และทุกครั้งที่มีผู้เล่นทำงานผิดกฎหมายจุดนั้นๆ ไปแล้ว จะนับถอยหลัง 30 นาที สำหรับเวลาทั่วไป (3.00 น. ถึง 17.00 น.) และจะปรับจาก 30 มาเป็น 20 ในเวลา Peak Time (18.00 น. ถึง 2.00 น.)" 
     },
-    { title: "กฎการเล่น", icon: ScrollText, color: "from-purple-500 to-purple-600", desc: "ข้อบังคับในโซนแดนเถื่อน (Thief Land)" },
+    { 
+      title: "กฎการเล่น", 
+      icon: ScrollText, 
+      color: "from-purple-500 to-purple-600", 
+      desc: "ออกแบบมาให้ใช้กฎเฉพาะในเขตนั้นๆ แยกไปเลย โดยไม่นับรวมกับกฎ RP เพื่อตัดปัญหาการนำกฎบังคับข้ออื่นๆ มารวมกันและเกิดปัญหาดราม่า ทำให้ผู้เล่นคนอื่นได้รับผลกระทบ และให้ผู้เล่นที่ชอบการยิงในรูปแบบ Gameplay ลื่นไหล ดังนั้นการปล่อยอิสระให้ผู้เล่นในระดับที่ควบคุมได้ จะช่วยให้ผู้เล่นเล่นแล้วมีความสุขในระยะยาว" 
+    },
   ];
 
   return (
@@ -615,12 +731,22 @@ const GameplaySection = () => {
             {/* Visual Flow Lines (Desktop Only) */}
             <div className="absolute top-1/2 left-[-5rem] w-20 h-full -translate-y-1/2 pointer-events-none hidden lg:block">
               <svg className="w-full h-full" viewBox="0 0 100 400" preserveAspectRatio="none">
-                <path d="M 0 200 C 50 200, 50 50, 100 50" stroke="#ef4444" strokeWidth="3" fill="none" strokeDasharray="8 4" opacity="0.6">
+                {/* Connection to Topic 1 */}
+                <path d="M 0 200 C 50 200, 50 60, 100 60" stroke="#ef4444" strokeWidth="3" fill="none" strokeDasharray="8 4" opacity="0.6">
                   <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" repeatCount="indefinite" />
                 </path>
-                <path d="M 0 200 C 50 200, 50 150, 100 150" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.3" />
-                <path d="M 0 200 C 50 200, 50 250, 100 250" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.3" />
-                <path d="M 0 200 C 50 200, 50 350, 100 350" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.3" />
+                {/* Connection to Topic 2 */}
+                <path d="M 0 200 C 50 200, 50 140, 100 140" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.4">
+                  <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" />
+                </path>
+                {/* Connection to Topic 3 */}
+                <path d="M 0 200 C 50 200, 50 260, 100 260" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.4">
+                  <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
+                </path>
+                {/* Connection to Topic 4 */}
+                <path d="M 0 200 C 50 200, 50 340, 100 340" stroke="#ef4444" strokeWidth="2" fill="none" strokeDasharray="6 4" opacity="0.4">
+                  <animate attributeName="stroke-dashoffset" from="100" to="0" dur="5s" repeatCount="indefinite" />
+                </path>
               </svg>
             </div>
 
