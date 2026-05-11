@@ -588,13 +588,13 @@ const EventSection = () => {
                 </div>
                 <h3 className="text-3xl font-black text-white uppercase">ระบบ Extraction</h3>
               </div>
-              <p className="text-orange-100/70 text-lg leading-relaxed mb-6">
-                จัดปาร์ตี้สูงสุด 4 คน เข้าสู่ Map Guama เพื่อหาของมูลค่าสูงและของ Rare ระวัง! หากตายของจะตกและโดนขโมยได้ทันที
-              </p>
-              <div className="mt-auto flex items-center gap-6 text-sm font-black text-white/40 uppercase">
-                <span>30 MIN / ROUND</span>
-                <div className="w-1 h-1 bg-white/20 rounded-full" />
-                <span>6 TEAMS MAX</span>
+              <div className="space-y-6 text-orange-100/70 text-lg leading-relaxed font-medium">
+                <p>
+                  <span className="text-yellow-500 font-bold uppercase">New Mode:</span> คือการนำ ปืน ยา เข้าไปใน Map Guama จัดปาร์ตี้สูงสุด 4 คน จัดเป็น 6 ทีม มีเวลาจำกัด 30 นาทีต่อรอบ เพื่อให้ผู้เล่นเข้าไปหาของในนั้น หาของมูลค่าสูงเพื่อไปขาย Economy และหาของ Rare ต่างๆ เพื่อต่อยอดในอาชีพนั้น
+                </p>
+                <div className="p-6 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 font-bold italic">
+                  "ถ้าหากตาย ของที่ฟาร์มได้จะตกและคุณสามารถโดนขโมยของที่ฟาร์มจากพื้นที่ในนั้นได้ และออกมาตัวเปล่า"
+                </div>
               </div>
             </div>
           </motion.div>
@@ -608,12 +608,16 @@ const EventSection = () => {
                 </div>
                 <h3 className="text-3xl font-black text-white uppercase">ปล้นคลังอาวุธ</h3>
               </div>
-              <p className="text-orange-100/70 text-lg leading-relaxed mb-6">
-                สงครามแย่งชิงกล่องสินค้าอาวุธ สุ่มรับอาวุธระดับ Tier Patch ปัจจุบัน เพื่อความได้เปรียบเหนือกลุ่มอื่น
-              </p>
-              <div className="mt-auto flex items-center gap-3 text-red-500 font-black uppercase text-xs tracking-widest animate-pulse">
-                <div className="w-2 h-2 bg-red-500 rounded-full" />
-                Randomized Tier Weapons
+              <div className="space-y-6 text-orange-100/70 text-lg leading-relaxed font-medium">
+                <p>
+                  ออกแบบมาเพื่อให้ผู้เล่นแย่ง กล่องสินค้าอาวุธ สำหรับกล่องที่ได้ไป จะสุ่ม ปืน Tier อาวุธของ Patch นั้นๆ
+                </p>
+                <div className="pt-4 border-t border-red-500/20">
+                  <div className="flex items-center gap-3 text-red-500 font-black uppercase text-xs tracking-widest animate-pulse">
+                    <div className="w-2 h-2 bg-red-500 rounded-full" />
+                    Randomized Tier Weapon Rewards
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
