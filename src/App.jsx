@@ -5,7 +5,7 @@ import {
   Tractor, Utensils, Shield, Target, ShoppingCart, Gem, Crosshair,
   Briefcase, Skull, Wrench, FlaskConical, Crown, Users, Landmark,
   Gamepad2, PlayCircle, ScrollText, Zap, AlertCircle, Trophy, ShieldAlert,
-  Leaf, RefreshCw, Store, TrendingUp, Coins, BarChart3
+  Leaf, RefreshCw, Store, TrendingUp, Coins, BarChart3, History, ArrowUpRight, Layers
 } from 'lucide-react';
 
 function App() {
@@ -217,6 +217,9 @@ function App() {
 
         {/* Marketplace Section */}
         <MarketplaceSection />
+
+        {/* Legacy Systems Section */}
+        <LegacySection />
 
       </motion.div>
     </div>
@@ -662,6 +665,89 @@ const EventSection = () => {
               </p>
             </div>
           </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const LegacySection = () => {
+  return (
+    <div className="w-full mb-40 text-left">
+      <div className="flex flex-col items-center mb-16 px-4">
+        <div className="flex items-center gap-6 mb-6">
+          <History className="w-16 h-16 text-slate-400 drop-shadow-[0_0_10px_rgba(148,163,184,0.5)]" />
+          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#1e293b] uppercase">ระบบเดิม ที่นำไปต่อยอด</h2>
+        </div>
+        <div className="w-32 h-2 bg-slate-600 rounded-full mb-8" />
+        <p className="max-w-4xl text-center text-slate-400 text-xl font-medium leading-relaxed italic">
+          "การรักษารากฐานที่มั่นคง พร้อมเสริมเติมแต่งด้วยนวัตกรรมใหม่ เพื่อประสบการณ์ที่ลึกซึ้งและยั่งยืนกว่าเดิม"
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="relative p-1 rounded-[3.5rem] bg-gradient-to-br from-slate-700/30 via-slate-900/50 to-black shadow-2xl">
+          <div className="bg-black/90 rounded-[3.4rem] p-10 md:p-16 border-4 border-slate-500/10 overflow-hidden relative">
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-slate-500/5 blur-[120px] rounded-full -mr-40 -mt-40" />
+            
+            <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-500/10 flex items-center justify-center border border-slate-500/20">
+                    <Layers className="w-7 h-7 text-slate-400" />
+                  </div>
+                  <span className="text-slate-400 font-black uppercase tracking-[0.2em] text-sm">System Evolution</span>
+                </div>
+                
+                <h3 className="text-4xl md:text-5xl font-black text-white uppercase leading-tight mb-8">
+                  การผสมผสานระหว่าง<br/>
+                  <span className="text-slate-400">ความคุ้นเคย</span> และ <span className="text-white">ความสดใหม่</span>
+                </h3>
+                
+                <p className="text-slate-400 text-lg md:text-xl leading-relaxed font-medium mb-10">
+                  เราไม่เพียงแค่นำระบบเดิมกลับมา แต่เรานำมาขัดเกลาและขยายขีดความสามารถให้ตอบโจทย์การเล่นในปัจจุบันมากยิ่งขึ้น 
+                  ทุกฟีเจอร์ที่คุณเคยรักจะถูกยกระดับสู่มาตรฐานใหม่ของ Texas RP
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  {["ระบบอาชีพ", "ระบบพาหนะ", "ระบบที่พักอาศัย", "ระบบปฏิสัมพันธ์"].map((tag, i) => (
+                    <div key={i} className="px-5 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 text-sm font-bold">
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-slate-500/10 blur-xl rounded-[4rem] group-hover:bg-slate-500/20 transition-all duration-700" />
+                <div className="relative p-8 rounded-[3rem] border-2 border-slate-500/20 bg-black/40 backdrop-blur-xl">
+                  <div className="flex items-center justify-between mb-8">
+                    <h4 className="text-xl font-black text-white uppercase tracking-widest">Expansion Roadmap</h4>
+                    <ArrowUpRight className="w-6 h-6 text-slate-500" />
+                  </div>
+                  
+                  <div className="space-y-8">
+                    {[
+                      { title: "Refined Mechanics", desc: "ปรับปรุงความสมูทและความลึกของระบบดั้งเดิม" },
+                      { title: "Seamless Integration", desc: "เชื่อมต่อระบบเดิมเข้ากับ Ecosystem ใหม่" },
+                      { title: "Modern Optimization", desc: "เพิ่มประสิทธิภาพการทำงานให้รวดเร็วและเสถียร" }
+                    ].map((item, i) => (
+                      <div key={i} className="flex gap-5">
+                        <div className="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center shrink-0 border border-slate-500/20 text-slate-400 font-black text-xs">
+                          0{i + 1}
+                        </div>
+                        <div>
+                          <h5 className="text-white font-bold mb-1">{item.title}</h5>
+                          <p className="text-slate-500 text-sm">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
