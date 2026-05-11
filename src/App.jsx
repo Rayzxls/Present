@@ -4,7 +4,7 @@ import {
   Flame, Star, Map, ChevronRight, Axe, Pickaxe, Sprout, Hammer, Home,
   Tractor, Utensils, Shield, Target, ShoppingCart, Gem, Crosshair,
   Briefcase, Skull, Wrench, FlaskConical, Crown, Users, Landmark,
-  Gamepad2, PlayCircle, ScrollText, Zap, AlertCircle,
+  Gamepad2, PlayCircle, ScrollText, Zap, AlertCircle, Trophy, ShieldAlert,
   Leaf, RefreshCw, Store, TrendingUp, Coins, BarChart3
 } from 'lucide-react';
 
@@ -208,6 +208,9 @@ function App() {
 
         {/* Gameplay Section */}
         <GameplaySection />
+
+        {/* Event Section */}
+        <EventSection />
 
         {/* Ecosystem Section */}
         <EcosystemSection />
@@ -546,6 +549,97 @@ const GovernanceSection = () => {
             <span>ECONOMIC DRIVER</span>
           </div>
         </div>
+      </div>
+    </div>
+  );
+};
+
+const EventSection = () => {
+  return (
+    <div className="w-full mb-40 text-left">
+      <div className="flex flex-col items-center mb-16">
+        <div className="flex items-center gap-6 mb-4">
+          <Trophy className="w-16 h-16 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
+          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#4a3a05] uppercase">World Events</h2>
+        </div>
+        <div className="w-32 h-2 bg-yellow-500 rounded-full" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+        {/* Extraction Mode */}
+        <motion.div 
+          whileHover={{ y: -10 }}
+          className="relative group overflow-hidden rounded-[3rem] border-2 border-yellow-500/30 bg-gradient-to-br from-yellow-950/20 to-black shadow-2xl p-1"
+        >
+          <div className="bg-black/80 rounded-[2.9rem] p-10 md:p-12 h-full flex flex-col relative z-10">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 rounded-2xl bg-yellow-500/20 flex items-center justify-center border border-yellow-500/30 group-hover:scale-110 transition-transform">
+                <Map className="w-8 h-8 text-yellow-500" />
+              </div>
+              <div>
+                <span className="text-yellow-500/50 font-black uppercase tracking-widest text-xs">New Game Mode</span>
+                <h3 className="text-3xl font-black text-white uppercase tracking-wider">ระบบ Extraction</h3>
+              </div>
+            </div>
+            
+            <div className="space-y-6 text-orange-100/70 text-lg leading-relaxed font-medium mb-10">
+              <p>
+                จัดปาร์ตี้สูงสุด <span className="text-yellow-500 font-bold">4 คน (รวม 6 ทีม)</span> เข้าสู่ Map Guama เพื่อค้นหาไอเทมมูลค่าสูงและของ Rare ต่างๆ เพื่อต่อยอดอาชีพ
+              </p>
+              <div className="p-6 rounded-2xl bg-red-500/5 border border-red-500/20 italic text-red-400/80">
+                "ระวัง! หากคุณตาย ของที่ฟาร์มได้จะตกและสามารถโดนขโมยไปได้ทั้งหมด คุณอาจต้องออกมาตัวเปล่า"
+              </div>
+            </div>
+
+            <div className="mt-auto flex items-center gap-6">
+              <div className="flex flex-col">
+                <span className="text-white/40 text-xs font-black uppercase">Time Limit</span>
+                <span className="text-white font-black">30 MIN / ROUND</span>
+              </div>
+              <div className="w-[2px] h-10 bg-white/10" />
+              <div className="flex flex-col">
+                <span className="text-white/40 text-xs font-black uppercase">Max Players</span>
+                <span className="text-white font-black">24 SURVIVORS</span>
+              </div>
+            </div>
+          </div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/5 blur-[80px] rounded-full -mr-20 -mt-20 group-hover:bg-yellow-500/10 transition-colors" />
+        </motion.div>
+
+        {/* Armory Heist */}
+        <motion.div 
+          whileHover={{ y: -10 }}
+          className="relative group overflow-hidden rounded-[3rem] border-2 border-red-500/30 bg-gradient-to-br from-red-950/20 to-black shadow-2xl p-1"
+        >
+          <div className="bg-black/80 rounded-[2.9rem] p-10 md:p-12 h-full flex flex-col relative z-10">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 rounded-2xl bg-red-500/20 flex items-center justify-center border border-red-500/30 group-hover:scale-110 transition-transform">
+                <ShieldAlert className="w-8 h-8 text-red-500" />
+              </div>
+              <div>
+                <span className="text-red-500/50 font-black uppercase tracking-widest text-xs">Dynamic Event</span>
+                <h3 className="text-3xl font-black text-white uppercase tracking-wider">ปล้นคลังอาวุธ</h3>
+              </div>
+            </div>
+            
+            <div className="space-y-6 text-orange-100/70 text-lg leading-relaxed font-medium mb-10">
+              <p>
+                สงครามแย่งชิงกล่องสินค้าอาวุธที่มีมูลค่ามหาศาล ทุกกล่องที่ได้ไปจะมีการสุ่มอาวุธระดับ <span className="text-red-500 font-bold uppercase tracking-widest">Tier Patch ปัจจุบัน</span>
+              </p>
+              <p>
+                ออกแบบมาเพื่อท้าทายฝีมือและการทำงานเป็นทีม เพื่อชิงความได้เปรียบทางยุทโธปกรณ์เหนือกลุ่มอื่น
+              </p>
+            </div>
+
+            <div className="mt-auto">
+              <div className="flex items-center gap-3 text-red-500/80 font-black uppercase text-sm tracking-widest animate-pulse">
+                <div className="w-2 h-2 bg-red-500 rounded-full" />
+                Randomized Tier Weapons
+              </div>
+            </div>
+          </div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 blur-[80px] rounded-full -mr-20 -mt-20 group-hover:bg-red-500/10 transition-colors" />
+        </motion.div>
       </div>
     </div>
   );
