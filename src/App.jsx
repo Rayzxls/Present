@@ -682,7 +682,7 @@ const EcosystemSection = () => {
 
 const MarketplaceSection = () => {
   const features = [
-    { title: "ระบบประมูล", desc: "ซื้อขายสินค้าหายากด้วยราคาที่คุณกำหนดเอง", icon: BarChart3 },
+    { title: "ตลาด ประมูลสินค้า ประจำวัน", desc: "มีตลาด ประมูลสินค้าให้ผู้เล่นมาประมูลสินค้า ที่เอาไว้ใช้ประมูลสินค้าระหว่าง Player to Player", icon: BarChart3 },
     { title: "ตลาดกลางเมือง", icon: Store, desc: "แหล่งรวมสินค้าอุปโภคบริโภคพื้นฐาน" },
     { title: "แลกเปลี่ยนเงิน", icon: Coins, desc: "ระบบการเงินที่มั่นคงและปลอดภัย" }
   ];
@@ -703,12 +703,17 @@ const MarketplaceSection = () => {
             <div className="w-12 h-1 bg-yellow-500" />
             <span className="text-yellow-500 font-black uppercase tracking-widest text-sm">Trading Post</span>
           </div>
-          <h3 className="text-4xl font-black text-white mb-6 uppercase leading-tight">
-            ศูนย์กลาง<br />การค้าขายของรัฐ
+          <h3 className="text-3xl md:text-4xl font-black text-white mb-6 uppercase leading-tight">
+            จุดสำหรับการแลกเปลี่ยนสิ่งของ<br/>ทั้งถูกกฎหมายและผิดกฎหมาย
           </h3>
-          <p className="text-orange-100/60 text-lg leading-relaxed mb-8 font-medium">
-            เราสร้างระบบตลาดที่ทันสมัยแต่ยังคงกลิ่นอายความดั้งเดิม เพื่อให้ผู้เล่นทุกคนสามารถเป็นพ่อค้าและสร้างอาณาจักรธุรกิจของตนเองได้
-          </p>
+          <div className="space-y-6 text-orange-100/60 text-lg leading-relaxed font-medium">
+            <p>
+              <span className="text-green-500 font-bold">ในรูปแบบถูกกฎหมาย:</span> ออกแบบมาเพื่อแลกเปลี่ยนสินค้าที่ได้มาจากงานที่ออกแบบมาให้ใช้แลกของ หรือ Event มาเป็นของที่มีมูลค่าสูง
+            </p>
+            <p>
+              <span className="text-red-500 font-bold">ในรูปแบบผิดกฎหมาย:</span> ออกแบบมาเพื่อแลกสินค้าจากเงินผิดกฎหมายต่างๆ เช่นการขุดหลุมศพในเขตโซนที่มีการใช้กฎหมายที่อยู่ในเขต RP จะได้เงินผิดกฎหมายมาเพื่อใช้แลกชิ้นส่วนอาวุธปืนหรืออื่นๆ ได้
+            </p>
+          </div>
           <div className="flex flex-wrap gap-3">
             <div className="px-4 py-2 bg-yellow-500/10 rounded-full border border-yellow-500/30 text-yellow-500 text-xs font-black uppercase">P2P Trading</div>
             <div className="px-4 py-2 bg-yellow-500/10 rounded-full border border-yellow-500/30 text-yellow-500 text-xs font-black uppercase">Global Auction</div>
