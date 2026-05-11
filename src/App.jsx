@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Flame, Star, Map, ChevronRight, Axe, Pickaxe, Sprout, Hammer, Home, 
-  Tractor, Utensils, Shield, Target, ShoppingCart, Gem, Crosshair, 
-  Briefcase, Skull, Wrench, FlaskConical, Crown, Users, Landmark 
+import {
+  Flame, Star, Map, ChevronRight, Axe, Pickaxe, Sprout, Hammer, Home,
+  Tractor, Utensils, Shield, Target, ShoppingCart, Gem, Crosshair,
+  Briefcase, Skull, Wrench, FlaskConical, Crown, Users, Landmark
 } from 'lucide-react';
 
 function App() {
@@ -140,38 +140,35 @@ function App() {
                   key={race.id}
                   layout
                   onClick={() => setActiveRace(index)}
-                  className={`relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 ease-in-out border-2 ${
-                    isActive 
-                      ? 'border-red-600 shadow-[0_0_25px_rgba(220,38,38,0.5)] flex-[3] md:flex-[5]' 
-                      : 'border-red-900/20 hover:border-red-600/40 flex-1'
-                  }`}
+                  className={`relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 ease-in-out border-2 ${isActive
+                    ? 'border-red-600 shadow-[0_0_25px_rgba(220,38,38,0.5)] flex-[3] md:flex-[5]'
+                    : 'border-red-900/20 hover:border-red-600/40 flex-1'
+                    }`}
                 >
-                  <img 
-                    src={race.image} 
-                    alt={race.name} 
-                    className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ${
-                      isActive ? 'scale-105 brightness-100' : 'scale-110 grayscale-[60%] brightness-[0.35]'
-                    }`} 
+                  <img
+                    src={race.image}
+                    alt={race.name}
+                    className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ${isActive ? 'scale-105 brightness-100' : 'scale-110 grayscale-[60%] brightness-[0.35]'
+                      }`}
                   />
-                  <div className={`absolute inset-0 transition-all duration-500 ${
-                    isActive 
-                      ? 'bg-gradient-to-t from-black/95 via-black/30 to-transparent' 
-                      : 'bg-gradient-to-t from-black/80 via-black/50 to-black/30'
-                  }`} />
+                  <div className={`absolute inset-0 transition-all duration-500 ${isActive
+                    ? 'bg-gradient-to-t from-black/95 via-black/30 to-transparent'
+                    : 'bg-gradient-to-t from-black/80 via-black/50 to-black/30'
+                    }`} />
 
                   {isActive ? (
                     <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-left">
-                      <motion.h3 
-                        initial={{ opacity: 0, y: 20 }} 
-                        animate={{ opacity: 1, y: 0 }} 
+                      <motion.h3
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4 }}
                         className="text-4xl md:text-5xl font-black text-white mb-4 [text-shadow:2px_2px_8px_rgba(0,0,0,0.9)]"
                       >
                         {race.name}
                       </motion.h3>
-                      <motion.div 
-                        initial={{ opacity: 0, y: 15 }} 
-                        animate={{ opacity: 1, y: 0 }} 
+                      <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 }}
                         className="flex items-stretch w-fit"
                       >
@@ -302,7 +299,7 @@ const SkillTreeSection = () => {
   return (
     <div className="w-full mb-32 relative text-left">
       <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center text-white [text-shadow:3px_3px_0px_#4a0d0d,_0px_5px_15px_rgba(0,0,0,0.8)] uppercase">ระบบทักษะการเอาชีวิตรอด</h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto mb-16">
         {skillTrees.map((tree, idx) => (
           <div key={idx} className="bg-black/40 p-8 rounded-3xl border border-red-900/30 backdrop-blur-md relative overflow-hidden group hover:border-red-500/50 transition-all shadow-xl">
@@ -377,16 +374,23 @@ const SkillTreeSection = () => {
 const BusinessSection = () => {
   return (
     <div className="w-full mb-32 text-left">
-      <div className="flex flex-col items-center mb-16">
+      <div className="flex flex-col items-center mb-16 text-center">
         <div className="flex items-center gap-6 mb-4">
           <Landmark className="w-16 h-16 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
-          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#4a0d0d] uppercase text-center">ธุรกิจ Saloon & Casino</h2>
+          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#4a0d0d] uppercase">โครงสร้างระบบ ธุรกิจ</h2>
         </div>
-        <div className="w-32 h-2 bg-yellow-500 rounded-full" />
-        <p className="text-orange-100/60 mt-4 text-xl font-medium">โมเดลธุรกิจแบบบูรณาการ: อาหาร เครื่องดื่ม และการเสี่ยงโชค</p>
+        <div className="w-32 h-2 bg-yellow-500 rounded-full mb-8" />
+        <p className="max-w-4xl text-orange-100/80 text-xl md:text-2xl font-medium leading-relaxed italic border-x-2 border-yellow-500/30 px-8">
+          "ระบบธุรกิจจะออกแบบมาให้เป็นจุด Community ที่ทุกคนเข้าถึง พร้อมทั้งส่งเสริมให้ผู้เล่นเกิดการสร้าง Story ต่างๆ ภายในเมือง ซึ่งแต่ละธุรกิจจะไม่ซ้ำกัน และจะมีรูปแบบเฉพาะตัวของมันเอง"
+        </p>
       </div>
 
       <div className="max-w-6xl mx-auto">
+        <div className="flex items-center gap-4 mb-12">
+          <div className="w-12 h-1 bg-red-600" />
+          <h3 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight">แนะนำธุรกิจ: Saloon & Casino</h3>
+        </div>
+
         {/* Intro Highlight */}
         <div className="relative group overflow-hidden rounded-[3rem] border-2 border-orange-900/50 bg-black/40 backdrop-blur-lg mb-12 shadow-2xl">
           <div className="flex flex-col lg:flex-row items-stretch">
@@ -400,7 +404,7 @@ const BusinessSection = () => {
                 <p className="text-yellow-500 font-bold uppercase tracking-widest text-lg">Unified Business Model</p>
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-snug">
-                Saloon และ Casino คือธุรกิจเดียวกันที่มอบประสบการณ์ครบวงจร ตั้งแต่การเป็นศูนย์รวมชุมชนไปจนถึงสถานบันเทิงยามค่ำคืน
+                โมเดลธุรกิจแบบบูรณาการ: อาหาร เครื่องดื่ม และการเสี่ยงโชคครบวงจรในที่เดียว
               </h3>
               <div className="flex flex-wrap gap-4">
                 <div className="px-6 py-3 rounded-full bg-yellow-500 text-black font-black uppercase text-sm">Community Hub</div>
@@ -452,7 +456,7 @@ const BusinessSection = () => {
                     Casino จะทำงานได้เมื่อมี <span className="text-white font-bold">ต้นทุนสำรอง</span> เช่น ลงทุน 100,000$ หากเงินทุนหมด ระบบจะหยุดทำงานทันที
                   </p>
                 </div>
-                
+
                 <div className="pt-4 border-t border-yellow-900/20">
                   <h5 className="text-yellow-500 font-bold uppercase text-sm mb-3 tracking-widest">ทางเลือกการเสียภาษี</h5>
                   <div className="grid grid-cols-2 gap-4">
