@@ -566,7 +566,7 @@ const EcosystemSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative z-10">
-          
+
           {/* Column 1: Economy Central */}
           <div className="flex flex-col items-center gap-8">
             <motion.div whileHover={{ y: -5 }} className="w-full p-6 rounded-[2rem] bg-gradient-to-br from-green-500/20 to-black border-2 border-green-500/30 text-center shadow-xl">
@@ -621,7 +621,7 @@ const EcosystemSection = () => {
 
         {/* Final Convergence Point: Landmark */}
         <div className="flex flex-col items-center relative">
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.02 }}
             className="w-full max-w-2xl p-1 rounded-[3rem] bg-gradient-to-br from-yellow-400 via-yellow-600 to-yellow-900 shadow-[0_0_70px_rgba(234,179,8,0.2)] z-10"
           >
@@ -649,7 +649,7 @@ const EcosystemSection = () => {
             </div>
 
             {/* Silver/Money Branch */}
-            <motion.div 
+            <motion.div
               whileHover={{ y: 5 }}
               className="flex flex-col items-center gap-4"
             >
@@ -660,7 +660,7 @@ const EcosystemSection = () => {
             </motion.div>
 
             {/* Gold Branch */}
-            <motion.div 
+            <motion.div
               whileHover={{ y: 5 }}
               className="flex flex-col items-center gap-4"
             >
@@ -703,7 +703,7 @@ const MarketplaceSection = () => {
             <span className="text-yellow-500 font-black uppercase tracking-widest text-sm">Trading Post</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-black text-white mb-6 uppercase leading-tight">
-            จุดสำหรับการแลกเปลี่ยนสิ่งของ<br/>ทั้งถูกกฎหมายและผิดกฎหมาย
+            จุดสำหรับการแลกเปลี่ยนสิ่งของ<br />ทั้งถูกกฎหมายและผิดกฎหมาย
           </h3>
           <div className="space-y-6 text-orange-100/60 text-lg leading-relaxed font-medium">
             <p>
@@ -783,8 +783,33 @@ const GameplaySection = () => {
               whileHover={{ scale: 1.05 }}
               className="relative p-1 rounded-[3rem] bg-gradient-to-br from-red-600 to-red-900 shadow-[0_0_50px_rgba(220,38,38,0.3)] z-20"
             >
-              <div className="bg-black rounded-[2.9rem] px-10 py-16 border-4 border-red-500/30 flex flex-col items-center text-center max-w-[400px]">
-                <Zap className="w-16 h-16 text-red-500 mb-6 animate-pulse" />
+              <div className="bg-black rounded-[2.9rem] px-10 py-16 border-4 border-red-500/30 flex flex-col items-center text-center max-w-[400px] relative overflow-hidden group">
+                {/* Battle-Worn Skull Icon Container */}
+                <div className="relative mb-6">
+                  <motion.div
+                    animate={{ 
+                      filter: ["drop-shadow(0 0 10px #ef4444)", "drop-shadow(0 0 20px #ef4444)", "drop-shadow(0 0 10px #ef4444)"]
+                    }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                  >
+                    <Skull className="w-24 h-24 text-red-600" />
+                  </motion.div>
+                  
+                  {/* Bullet Hole */}
+                  <div className="absolute top-4 right-8 w-3 h-3 bg-black rounded-full border border-red-900 shadow-[inset_0_0_5px_rgba(255,0,0,0.5)]" />
+                  
+                  {/* Scar (Jagged Line) */}
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 24 24" fill="none">
+                    <path d="M 8 6 L 16 18" stroke="#4a0d0d" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                    <path d="M 7.5 6.5 L 15.5 17.5" stroke="#ef4444" strokeWidth="0.5" strokeLinecap="round" opacity="0.4" />
+                  </svg>
+
+                  {/* Blind Eye (Eye Patch/X) */}
+                  <div className="absolute top-[38px] left-[26px] w-5 h-5 bg-black rounded-full flex items-center justify-center border border-red-950">
+                    <div className="w-3 h-0.5 bg-red-900 rotate-45 absolute" />
+                    <div className="w-3 h-0.5 bg-red-900 -rotate-45 absolute" />
+                  </div>
+                </div>
                 <h3 className="text-4xl md:text-5xl font-black text-white uppercase leading-tight mb-6">
                   โซน <span className="text-red-500">Thief Land</span>
                 </h3>
