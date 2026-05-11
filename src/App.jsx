@@ -620,24 +620,59 @@ const EcosystemSection = () => {
         </div>
 
         {/* Final Convergence Point: Landmark */}
-        <div className="flex justify-center relative">
+        <div className="flex flex-col items-center relative">
           <motion.div 
-            whileHover={{ scale: 1.05 }}
-            className="w-full max-w-2xl p-1 rounded-[3rem] bg-gradient-to-br from-yellow-400 via-yellow-600 to-yellow-900 shadow-[0_0_70px_rgba(234,179,8,0.2)]"
+            whileHover={{ scale: 1.02 }}
+            className="w-full max-w-2xl p-1 rounded-[3rem] bg-gradient-to-br from-yellow-400 via-yellow-600 to-yellow-900 shadow-[0_0_70px_rgba(234,179,8,0.2)] z-10"
           >
-            <div className="bg-black rounded-[2.9rem] p-12 border-4 border-yellow-500/30 text-center relative overflow-hidden">
+            <div className="bg-black rounded-[2.9rem] p-10 md:p-12 border-4 border-yellow-500/30 text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent pointer-events-none" />
               <Landmark className="w-16 h-16 text-yellow-500 mb-6 mx-auto animate-pulse" />
               <h3 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 [text-shadow:0_0_20px_rgba(234,179,8,0.5)]">
                 LANDMARK
               </h3>
-              <p className="text-yellow-100/70 text-xl font-bold uppercase tracking-[0.2em] mb-4">The Golden Prosperity</p>
-              <div className="w-48 h-1 bg-yellow-500/50 mx-auto rounded-full" />
-              <p className="mt-8 text-orange-100/60 font-medium max-w-lg mx-auto leading-relaxed">
-                "จุดยุทธศาสตร์และศูนย์กลางความเจริญของรัฐ ที่ซึ่งทุกเส้นทางเศรษฐกิจมาบรรจบกันเพื่อความมั่งคั่งที่ยั่งยืน"
+              <div className="w-48 h-1 bg-yellow-500/50 mx-auto rounded-full mb-6" />
+              <p className="text-orange-100/80 text-xl md:text-2xl font-black max-w-lg mx-auto leading-tight italic">
+                "เป็นโซนสำหรับ การซื้อขาย, การทำ Community จะมีอยู่จุดเดียวในเซิร์ฟเวอร์"
               </p>
             </div>
           </motion.div>
+
+          {/* Branches below Landmark */}
+          <div className="mt-12 flex gap-12 md:gap-32 relative">
+            {/* SVG Connector for branches */}
+            <div className="absolute top-[-3rem] left-1/2 -translate-x-1/2 w-full h-12 pointer-events-none hidden md:block">
+              <svg className="w-full h-full" viewBox="0 0 400 50">
+                <path d="M 200 0 Q 200 25, 50 50" stroke="#94a3b8" strokeWidth="2" fill="none" opacity="0.3" />
+                <path d="M 200 0 Q 200 25, 350 50" stroke="#fbbf24" strokeWidth="2" fill="none" opacity="0.3" />
+              </svg>
+            </div>
+
+            {/* Silver/Money Branch */}
+            <motion.div 
+              whileHover={{ y: 5 }}
+              className="flex flex-col items-center gap-4"
+            >
+              <div className="w-24 h-24 rounded-full bg-slate-500/10 border-4 border-slate-400/30 flex items-center justify-center shadow-lg">
+                <Coins className="w-10 h-10 text-slate-300" />
+              </div>
+              <span className="text-2xl font-black text-slate-300 uppercase tracking-widest">เงิน</span>
+            </motion.div>
+
+            {/* Gold Branch */}
+            <motion.div 
+              whileHover={{ y: 5 }}
+              className="flex flex-col items-center gap-4"
+            >
+              <div className="w-24 h-24 rounded-full bg-yellow-500/10 border-4 border-yellow-500/30 flex items-center justify-center shadow-lg">
+                <div className="relative">
+                  <Coins className="w-10 h-10 text-yellow-500" />
+                  <Zap className="absolute -top-2 -right-2 w-5 h-5 text-yellow-400 animate-pulse" />
+                </div>
+              </div>
+              <span className="text-2xl font-black text-yellow-500 uppercase tracking-widest">ทอง</span>
+            </motion.div>
+          </div>
         </div>
 
       </div>
