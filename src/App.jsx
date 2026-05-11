@@ -557,89 +557,108 @@ const GovernanceSection = () => {
 const EventSection = () => {
   return (
     <div className="w-full mb-40 text-left">
-      <div className="flex flex-col items-center mb-16">
-        <div className="flex items-center gap-6 mb-4">
+      <div className="flex flex-col items-center mb-16 px-4">
+        <div className="flex items-center gap-6 mb-6">
           <Trophy className="w-16 h-16 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
           <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#4a3a05] uppercase">World Events</h2>
         </div>
-        <div className="w-32 h-2 bg-yellow-500 rounded-full" />
+        <div className="w-32 h-2 bg-yellow-500 rounded-full mb-8" />
+        <p className="max-w-4xl text-center text-orange-100/60 text-xl font-medium leading-relaxed italic">
+          "ออกแบบให้ครอบคลุมทั้งผู้เล่นสาย <span className="text-red-500 font-bold">Gameplay</span> และผู้เล่นฝั่ง <span className="text-blue-500 font-bold">State</span> เพื่อให้ทุกคนสามารถ Enjoy กับกิจกรรมในรัฐได้อย่างเท่าเทียม"
+        </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
-        {/* Extraction Mode */}
-        <motion.div 
-          whileHover={{ y: -10 }}
-          className="relative group overflow-hidden rounded-[3rem] border-2 border-yellow-500/30 bg-gradient-to-br from-yellow-950/20 to-black shadow-2xl p-1"
-        >
-          <div className="bg-black/80 rounded-[2.9rem] p-10 md:p-12 h-full flex flex-col relative z-10">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 rounded-2xl bg-yellow-500/20 flex items-center justify-center border border-yellow-500/30 group-hover:scale-110 transition-transform">
-                <Map className="w-8 h-8 text-yellow-500" />
-              </div>
-              <div>
-                <span className="text-yellow-500/50 font-black uppercase tracking-widest text-xs">New Game Mode</span>
-                <h3 className="text-3xl font-black text-white uppercase tracking-wider">ระบบ Extraction</h3>
-              </div>
-            </div>
-            
-            <div className="space-y-6 text-orange-100/70 text-lg leading-relaxed font-medium mb-10">
-              <p>
-                จัดปาร์ตี้สูงสุด <span className="text-yellow-500 font-bold">4 คน (รวม 6 ทีม)</span> เข้าสู่ Map Guama เพื่อค้นหาไอเทมมูลค่าสูงและของ Rare ต่างๆ เพื่อต่อยอดอาชีพ
-              </p>
-              <div className="p-6 rounded-2xl bg-red-500/5 border border-red-500/20 italic text-red-400/80">
-                "ระวัง! หากคุณตาย ของที่ฟาร์มได้จะตกและสามารถโดนขโมยไปได้ทั้งหมด คุณอาจต้องออกมาตัวเปล่า"
-              </div>
-            </div>
+      <div className="max-w-7xl mx-auto px-4 space-y-12">
+        {/* Category: Combat Events (Gameplay Players) */}
+        <div className="flex items-center gap-4 mb-8">
+          <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-red-500/30" />
+          <span className="text-red-500 font-black uppercase tracking-[0.3em] text-sm flex items-center gap-2">
+            <Skull className="w-4 h-4" /> Combat & Gameplay Events
+          </span>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-500/30" />
+        </div>
 
-            <div className="mt-auto flex items-center gap-6">
-              <div className="flex flex-col">
-                <span className="text-white/40 text-xs font-black uppercase">Time Limit</span>
-                <span className="text-white font-black">30 MIN / ROUND</span>
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Extraction Mode */}
+          <motion.div whileHover={{ y: -10 }} className="relative group overflow-hidden rounded-[3rem] border-2 border-yellow-500/30 bg-gradient-to-br from-yellow-950/20 to-black shadow-2xl p-1">
+            <div className="bg-black/80 rounded-[2.9rem] p-10 md:p-12 h-full flex flex-col relative z-10">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 rounded-2xl bg-yellow-500/20 flex items-center justify-center border border-yellow-500/30">
+                  <Map className="w-8 h-8 text-yellow-500" />
+                </div>
+                <h3 className="text-3xl font-black text-white uppercase">ระบบ Extraction</h3>
               </div>
-              <div className="w-[2px] h-10 bg-white/10" />
-              <div className="flex flex-col">
-                <span className="text-white/40 text-xs font-black uppercase">Max Players</span>
-                <span className="text-white font-black">24 SURVIVORS</span>
-              </div>
-            </div>
-          </div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/5 blur-[80px] rounded-full -mr-20 -mt-20 group-hover:bg-yellow-500/10 transition-colors" />
-        </motion.div>
-
-        {/* Armory Heist */}
-        <motion.div 
-          whileHover={{ y: -10 }}
-          className="relative group overflow-hidden rounded-[3rem] border-2 border-red-500/30 bg-gradient-to-br from-red-950/20 to-black shadow-2xl p-1"
-        >
-          <div className="bg-black/80 rounded-[2.9rem] p-10 md:p-12 h-full flex flex-col relative z-10">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 rounded-2xl bg-red-500/20 flex items-center justify-center border border-red-500/30 group-hover:scale-110 transition-transform">
-                <ShieldAlert className="w-8 h-8 text-red-500" />
-              </div>
-              <div>
-                <span className="text-red-500/50 font-black uppercase tracking-widest text-xs">Dynamic Event</span>
-                <h3 className="text-3xl font-black text-white uppercase tracking-wider">ปล้นคลังอาวุธ</h3>
-              </div>
-            </div>
-            
-            <div className="space-y-6 text-orange-100/70 text-lg leading-relaxed font-medium mb-10">
-              <p>
-                สงครามแย่งชิงกล่องสินค้าอาวุธที่มีมูลค่ามหาศาล ทุกกล่องที่ได้ไปจะมีการสุ่มอาวุธระดับ <span className="text-red-500 font-bold uppercase tracking-widest">Tier Patch ปัจจุบัน</span>
+              <p className="text-orange-100/70 text-lg leading-relaxed mb-6">
+                จัดปาร์ตี้สูงสุด 4 คน เข้าสู่ Map Guama เพื่อหาของมูลค่าสูงและของ Rare ระวัง! หากตายของจะตกและโดนขโมยได้ทันที
               </p>
-              <p>
-                ออกแบบมาเพื่อท้าทายฝีมือและการทำงานเป็นทีม เพื่อชิงความได้เปรียบทางยุทโธปกรณ์เหนือกลุ่มอื่น
-              </p>
+              <div className="mt-auto flex items-center gap-6 text-sm font-black text-white/40 uppercase">
+                <span>30 MIN / ROUND</span>
+                <div className="w-1 h-1 bg-white/20 rounded-full" />
+                <span>6 TEAMS MAX</span>
+              </div>
             </div>
+          </motion.div>
 
-            <div className="mt-auto">
-              <div className="flex items-center gap-3 text-red-500/80 font-black uppercase text-sm tracking-widest animate-pulse">
+          {/* Armory Heist */}
+          <motion.div whileHover={{ y: -10 }} className="relative group overflow-hidden rounded-[3rem] border-2 border-red-500/30 bg-gradient-to-br from-red-950/20 to-black shadow-2xl p-1">
+            <div className="bg-black/80 rounded-[2.9rem] p-10 md:p-12 h-full flex flex-col relative z-10">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 rounded-2xl bg-red-500/20 flex items-center justify-center border border-red-500/30">
+                  <ShieldAlert className="w-8 h-8 text-red-500" />
+                </div>
+                <h3 className="text-3xl font-black text-white uppercase">ปล้นคลังอาวุธ</h3>
+              </div>
+              <p className="text-orange-100/70 text-lg leading-relaxed mb-6">
+                สงครามแย่งชิงกล่องสินค้าอาวุธ สุ่มรับอาวุธระดับ Tier Patch ปัจจุบัน เพื่อความได้เปรียบเหนือกลุ่มอื่น
+              </p>
+              <div className="mt-auto flex items-center gap-3 text-red-500 font-black uppercase text-xs tracking-widest animate-pulse">
                 <div className="w-2 h-2 bg-red-500 rounded-full" />
                 Randomized Tier Weapons
               </div>
             </div>
-          </div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 blur-[80px] rounded-full -mr-20 -mt-20 group-hover:bg-red-500/10 transition-colors" />
-        </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Category: Community Events (State Players) */}
+        <div className="flex items-center gap-4 pt-12 mb-8">
+          <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-blue-500/30" />
+          <span className="text-blue-500 font-black uppercase tracking-[0.3em] text-sm flex items-center gap-2">
+            <Users className="w-4 h-4" /> State & Community Events
+          </span>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-blue-500/30" />
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Horse Racing */}
+          <motion.div whileHover={{ y: -10 }} className="relative group overflow-hidden rounded-[3rem] border-2 border-blue-500/30 bg-gradient-to-br from-blue-950/20 to-black shadow-2xl p-1">
+            <div className="bg-black/80 rounded-[2.9rem] p-10 md:p-12 h-full flex flex-col relative z-10">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
+                  <Star className="w-8 h-8 text-blue-500" />
+                </div>
+                <h3 className="text-3xl font-black text-white uppercase">แข่งม้าระหว่าง State</h3>
+              </div>
+              <p className="text-orange-100/70 text-lg leading-relaxed">
+                การประชันความเร็วและความผูกพันระหว่างผู้เล่นกับพาหนะคู่ใจ ชิงเกียรติยศและรางวัลใหญ่ให้กับรัฐของคุณ
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Boxing Tournament */}
+          <motion.div whileHover={{ y: -10 }} className="relative group overflow-hidden rounded-[3rem] border-2 border-purple-500/30 bg-gradient-to-br from-purple-950/20 to-black shadow-2xl p-1">
+            <div className="bg-black/80 rounded-[2.9rem] p-10 md:p-12 h-full flex flex-col relative z-10">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center border border-purple-500/30">
+                  <Target className="w-8 h-8 text-purple-500" />
+                </div>
+                <h3 className="text-3xl font-black text-white uppercase">ศึกมวยตัวแทนรัฐ</h3>
+              </div>
+              <p className="text-orange-100/70 text-lg leading-relaxed">
+                การต่อสู้ด้วยพละกำลังและชั้นเชิงของตัวแทนในแต่ละรัฐ เพื่อพิสูจน์ว่ารัฐใดคือหนึ่งในด้านความแข็งแกร่ง
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
