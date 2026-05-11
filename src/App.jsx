@@ -380,12 +380,14 @@ const BusinessSection = () => {
       <div className="flex flex-col items-center mb-16">
         <div className="flex items-center gap-6 mb-4">
           <Landmark className="w-16 h-16 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
-          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#4a0d0d] uppercase">ระบบธุรกิจ</h2>
+          <h2 className="text-5xl md:text-7xl font-black text-white [text-shadow:4px_4px_0px_#4a0d0d] uppercase text-center">ธุรกิจ Saloon & Casino</h2>
         </div>
         <div className="w-32 h-2 bg-yellow-500 rounded-full" />
+        <p className="text-orange-100/60 mt-4 text-xl font-medium">โมเดลธุรกิจแบบบูรณาการ: อาหาร เครื่องดื่ม และการเสี่ยงโชค</p>
       </div>
 
       <div className="max-w-6xl mx-auto">
+        {/* Intro Highlight */}
         <div className="relative group overflow-hidden rounded-[3rem] border-2 border-orange-900/50 bg-black/40 backdrop-blur-lg mb-12 shadow-2xl">
           <div className="flex flex-col lg:flex-row items-stretch">
             <div className="w-full lg:w-[45%] h-[400px] lg:h-auto relative overflow-hidden">
@@ -395,57 +397,74 @@ const BusinessSection = () => {
             <div className="w-full lg:w-[55%] p-10 lg:p-16 flex flex-col justify-center">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-1 bg-yellow-500" />
-                <p className="text-yellow-500 font-bold uppercase tracking-widest text-lg">World Class Business</p>
+                <p className="text-yellow-500 font-bold uppercase tracking-widest text-lg">Unified Business Model</p>
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-snug">
-                ธุรกิจจะถูกออกแบบมาให้ไม่ซ้ำกัน และจะถูกแบบออกมาให้ ทุกคนสามารถ เข้าถึงธุรกิจได้ ขึ้นอยู่กับ เจ้าของธุรกิจ และ ทีมงานตกลงกัน
+                Saloon และ Casino คือธุรกิจเดียวกันที่มอบประสบการณ์ครบวงจร ตั้งแต่การเป็นศูนย์รวมชุมชนไปจนถึงสถานบันเทิงยามค่ำคืน
               </h3>
-              <div className="flex gap-4">
-                <div className="px-6 py-3 rounded-full bg-yellow-500 text-black font-black uppercase text-sm">Exclusive Property</div>
-                <div className="px-6 py-3 rounded-full border border-white/20 text-white font-bold uppercase text-sm">Dynamic Economy</div>
+              <div className="flex flex-wrap gap-4">
+                <div className="px-6 py-3 rounded-full bg-yellow-500 text-black font-black uppercase text-sm">Community Hub</div>
+                <div className="px-6 py-3 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-500 font-bold uppercase text-sm">High Risk High Reward</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="group relative overflow-hidden rounded-[2.5rem] border-2 border-red-900/30 bg-black/40 backdrop-blur-md hover:border-red-500/50 transition-all p-2 shadow-xl">
-            <div className="flex flex-col h-full">
-              <div className="relative h-64 overflow-hidden rounded-[2rem] mb-6">
-                <img src="/saloon_cook.png" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" alt="Cook" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute bottom-6 left-8">
-                  <h4 className="text-3xl font-black text-white uppercase tracking-wider">ธุรกิจ Saloon</h4>
-                </div>
+        {/* Dual Branches Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Branch 1: Saloon Service */}
+          <div className="group relative overflow-hidden rounded-[2.5rem] border-2 border-red-900/30 bg-black/40 backdrop-blur-md hover:border-red-500/50 transition-all shadow-xl">
+            <div className="relative h-72 overflow-hidden">
+              <img src="/saloon_cook.png" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" alt="Saloon" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+              <div className="absolute bottom-6 left-8 flex items-center gap-4">
+                <div className="p-3 bg-red-600 rounded-xl text-white shadow-lg"><Utensils className="w-8 h-8" /></div>
+                <h4 className="text-3xl font-black text-white uppercase tracking-wider">ส่วนของ Saloon</h4>
               </div>
-              <div className="px-8 pb-8">
-                <p className="text-orange-100/70 text-lg leading-relaxed mb-6 font-medium italic border-l-4 border-red-600 pl-6">
-                  "เน้นการทำอาหาร และการสร้างพื้นที่ส่วนกลาง (Community) สำหรับผู้คนในเมือง ให้มาพบปะพูดคุยกัน"
-                </p>
-                <div className="flex items-center gap-2 text-red-500 font-bold">
-                  <Utensils className="w-6 h-6" />
-                  <span>COMMUNITY HUB</span>
-                </div>
-              </div>
+            </div>
+            <div className="p-8">
+              <p className="text-orange-100/70 text-lg leading-relaxed mb-6 font-medium italic border-l-4 border-red-600 pl-6">
+                "เน้นการทำอาหาร และการสร้างพื้นที่ส่วนกลาง สำหรับผู้คนในเมือง ให้มาพบปะพูดคุยและสร้างความสัมพันธ์"
+              </p>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-red-500" /> แหล่งรวมข่าวสารและภารกิจ</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-red-500" /> บริการอาหารและเครื่องดื่มเพิ่มบัฟ</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-red-500" /> พื้นที่ปลอดภัยสำหรับการเจรจา</li>
+              </ul>
             </div>
           </div>
 
-          <div className="group relative overflow-hidden rounded-[2.5rem] border-2 border-yellow-900/30 bg-black/40 backdrop-blur-md hover:border-yellow-500/50 transition-all p-2 shadow-xl">
-            <div className="flex flex-col h-full">
-              <div className="relative h-64 overflow-hidden rounded-[2rem] mb-6">
-                <img src="/casino_interior.png" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" alt="Casino" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute bottom-6 left-8">
-                  <h4 className="text-3xl font-black text-white uppercase tracking-wider">Casino</h4>
-                </div>
+          {/* Branch 2: Casino Operation */}
+          <div className="group relative overflow-hidden rounded-[2.5rem] border-2 border-yellow-900/30 bg-black/40 backdrop-blur-md hover:border-yellow-500/50 transition-all shadow-xl">
+            <div className="relative h-72 overflow-hidden">
+              <img src="/casino_interior.png" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" alt="Casino" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+              <div className="absolute bottom-6 left-8 flex items-center gap-4">
+                <div className="p-3 bg-yellow-600 rounded-xl text-white shadow-lg"><Gem className="w-8 h-8" /></div>
+                <h4 className="text-3xl font-black text-white uppercase tracking-wider">ส่วนของ Casino</h4>
               </div>
-              <div className="px-8 pb-8">
-                <p className="text-orange-100/70 text-lg leading-relaxed mb-6 font-medium italic border-l-4 border-yellow-600 pl-6">
-                  "เจ้าของสามารถเปิดเป็น Casino หากินได้ทั้งถูกกฎหมายและผิดกฎหมาย ขึ้นอยู่กับการบริหารจัดการ"
-                </p>
-                <div className="flex items-center gap-2 text-yellow-500 font-bold">
-                  <Gem className="w-6 h-6" />
-                  <span>HIGH STAKES</span>
+            </div>
+            <div className="p-8">
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-yellow-500 font-bold uppercase text-sm mb-2 tracking-widest">ระบบต้นทุนการดำเนินงาน</h5>
+                  <p className="text-gray-300 leading-relaxed">
+                    Casino จะทำงานได้เมื่อมี <span className="text-white font-bold">ต้นทุนสำรอง</span> เช่น ลงทุน 100,000$ หากเงินทุนหมด ระบบจะหยุดทำงานทันที
+                  </p>
+                </div>
+                
+                <div className="pt-4 border-t border-yellow-900/20">
+                  <h5 className="text-yellow-500 font-bold uppercase text-sm mb-3 tracking-widest">ทางเลือกการเสียภาษี</h5>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-green-900/20 p-4 rounded-2xl border border-green-500/20">
+                      <p className="text-green-400 font-bold text-xs uppercase mb-1">ถูกกฎหมาย</p>
+                      <p className="text-white text-sm">จ่าย 15% VAT ให้รัฐบาล (Lawman)</p>
+                    </div>
+                    <div className="bg-red-900/20 p-4 rounded-2xl border border-red-500/20">
+                      <p className="text-red-400 font-bold text-xs uppercase mb-1">ผิดกฎหมาย</p>
+                      <p className="text-white text-sm">ไม่ต้องจ่ายภาษี (ความเสี่ยงสูง)</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
