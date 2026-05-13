@@ -224,10 +224,10 @@ const RoadmapPage = () => {
                   <div className="p-1 border border-amber-600/40 rounded-sm">
                     <div className="relative overflow-hidden rounded-sm" style={{ width: '280px', height: '340px' }}>
                       <img
-                        src="/cowboy_businessman.png"
+                        src="/lawkeeper_saint_denis.png"
                         alt="The Lawkeeper of Saint Denis"
                         className="w-full h-full object-cover object-top"
-                        style={{ filter: 'sepia(0.15) contrast(1.05) brightness(0.95)' }}
+                        style={{ filter: 'contrast(1.05) brightness(0.98)' }}
                       />
                       {/* Vignette over photo */}
                       <div
