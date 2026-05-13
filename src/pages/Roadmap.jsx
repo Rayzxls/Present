@@ -190,6 +190,126 @@ const RoadmapPage = () => {
             </div>
           </header>
 
+          {/* ===== Portrait / The Lawkeeper ===== */}
+          <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="relative mb-28 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-5xl mx-auto"
+          >
+            {/* Framed Portrait */}
+            <div className="relative shrink-0">
+              {/* Outer glow */}
+              <div className="absolute -inset-8 bg-amber-700/20 blur-[60px] rounded-full" />
+
+              {/* Ornate Frame */}
+              <div
+                className="relative p-3 rounded-sm"
+                style={{
+                  background:
+                    'linear-gradient(135deg, #c08a3e 0%, #6b3410 25%, #3a1d08 50%, #6b3410 75%, #c08a3e 100%)',
+                  boxShadow:
+                    '0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(180,120,50,0.3), inset 0 0 20px rgba(0,0,0,0.4)',
+                }}
+              >
+                {/* Inner brass border */}
+                <div
+                  className="p-2 rounded-sm"
+                  style={{
+                    background:
+                      'linear-gradient(135deg, #3a1d08 0%, #1a0d06 100%)',
+                  }}
+                >
+                  <div className="p-1 border border-amber-600/40 rounded-sm">
+                    <div className="relative overflow-hidden rounded-sm" style={{ width: '280px', height: '340px' }}>
+                      <img
+                        src="/cowboy_businessman.png"
+                        alt="The Lawkeeper of Saint Denis"
+                        className="w-full h-full object-cover object-top"
+                        style={{ filter: 'sepia(0.15) contrast(1.05) brightness(0.95)' }}
+                      />
+                      {/* Vignette over photo */}
+                      <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                          background:
+                            'radial-gradient(ellipse at center, transparent 50%, rgba(20,10,5,0.6) 100%)',
+                        }}
+                      />
+                      {/* Light leak */}
+                      <div className="absolute top-0 left-0 w-1/2 h-1/3 bg-gradient-to-br from-amber-300/20 to-transparent pointer-events-none" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Corner ornaments on frame */}
+                <Corner className="absolute -top-1 -left-1 w-6 h-6 text-amber-300/90" />
+                <Corner className="absolute -top-1 -right-1 w-6 h-6 text-amber-300/90 -scale-x-100" />
+                <Corner className="absolute -bottom-1 -left-1 w-6 h-6 text-amber-300/90 -scale-y-100" />
+                <Corner className="absolute -bottom-1 -right-1 w-6 h-6 text-amber-300/90 -scale-100" />
+              </div>
+
+              {/* Hanging nail at top */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-amber-900 shadow-[0_2px_4px_rgba(0,0,0,0.6),inset_1px_1px_2px_rgba(251,191,36,0.5)]" />
+              <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-px h-4 bg-amber-900/60" />
+
+              {/* Brass nameplate */}
+              <div
+                className="absolute -bottom-5 left-1/2 -translate-x-1/2 px-6 py-1.5 rounded-sm border border-amber-700"
+                style={{
+                  background:
+                    'linear-gradient(180deg, #c08a3e 0%, #6b3410 100%)',
+                  boxShadow:
+                    'inset 0 1px 0 rgba(251,191,36,0.5), 0 4px 10px rgba(0,0,0,0.6)',
+                }}
+              >
+                <span
+                  className="text-[10px] font-black tracking-[0.35em] uppercase text-amber-950"
+                  style={{ fontFamily: "'Cinzel', serif" }}
+                >
+                  The Lawkeeper
+                </span>
+              </div>
+            </div>
+
+            {/* Side Text — Wanted Poster Style */}
+            <div className="flex-1 max-w-md text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
+                <span className="text-[10px] font-black tracking-[0.4em] text-red-500/90 uppercase border border-red-700/60 bg-red-950/40 px-3 py-1">
+                  ✦ Wanted ✦
+                </span>
+                <span className="text-[10px] tracking-[0.3em] text-amber-700/80 font-mono">Reward: $10,000</span>
+              </div>
+
+              <h2
+                className="text-4xl md:text-5xl font-black uppercase mb-3 leading-tight"
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  color: '#f3d9a4',
+                  textShadow: '2px 2px 0 #1a0d06, 4px 4px 8px rgba(0,0,0,0.7)',
+                }}
+              >
+                Dead or<br />Alive
+              </h2>
+
+              <div className="flex items-center gap-3 my-4 justify-center md:justify-start">
+                <span className="h-px w-12 bg-amber-700/60" />
+                <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
+                <span className="h-px w-12 bg-amber-700/60" />
+              </div>
+
+              <p className="text-amber-100/70 italic leading-relaxed text-sm md:text-base">
+                “เขาเดินผ่านควันบุหรี่และแสงตะเกียงของ Saint Denis — สวมหมวกผู้พิทักษ์กฎหมาย แต่กระเป๋าหนักด้วยเหรียญที่ได้มาจากโต๊ะรูเล็ตต์”
+              </p>
+
+              <div className="mt-5 flex items-center justify-center md:justify-start gap-2 text-[10px] tracking-[0.35em] text-amber-600/80 font-black uppercase">
+                <Compass className="w-3 h-3" />
+                Last seen at the casino
+              </div>
+            </div>
+          </motion.section>
+
           {/* ===== Timeline ===== */}
           <div className="relative">
             {/* Rope/chain vertical line */}
