@@ -198,7 +198,7 @@ const BusinessSection = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="group relative overflow-hidden rounded-[2.5rem] border-2 border-red-900/30 bg-black/40 backdrop-blur-md hover:border-red-500/50 transition-all shadow-xl">
-            <div className="relative h-72 overflow-hidden">
+            <div className="relative h-52 overflow-hidden">
               <img src="/saloon_cook.png" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" alt="Saloon" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-4">
@@ -216,7 +216,7 @@ const BusinessSection = () => {
             </div>
           </div>
           <div className="group relative overflow-hidden rounded-[2.5rem] border-2 border-yellow-900/30 bg-black/40 backdrop-blur-md hover:border-yellow-500/50 transition-all shadow-xl">
-            <div className="relative h-72 overflow-hidden">
+            <div className="relative h-52 overflow-hidden">
               <img src="/casino_interior.png" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" alt="Casino" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-4">
