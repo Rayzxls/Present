@@ -198,79 +198,72 @@ const RoadmapPage = () => {
             viewport={{ once: true }}
             className="relative mb-28 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-5xl mx-auto"
           >
-            {/* Framed Portrait */}
+            {/* Frameless Portrait — Feathered Edge / Mask Fade */}
             <div className="relative shrink-0">
-              {/* Outer glow */}
-              <div className="absolute -inset-8 bg-amber-700/20 blur-[60px] rounded-full" />
+              {/* Amber backlight glow */}
+              <div className="absolute -inset-16 bg-amber-700/25 blur-[100px] rounded-full" />
+              <div className="absolute -inset-8 bg-orange-900/30 blur-[60px] rounded-full" />
 
-              {/* Ornate Frame */}
-              <div
-                className="relative p-3 rounded-sm"
-                style={{
-                  background:
-                    'linear-gradient(135deg, #c08a3e 0%, #6b3410 25%, #3a1d08 50%, #6b3410 75%, #c08a3e 100%)',
-                  boxShadow:
-                    '0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(180,120,50,0.3), inset 0 0 20px rgba(0,0,0,0.4)',
-                }}
-              >
-                {/* Inner brass border */}
-                <div
-                  className="p-2 rounded-sm"
-                  style={{
-                    background:
-                      'linear-gradient(135deg, #3a1d08 0%, #1a0d06 100%)',
-                  }}
-                >
-                  <div className="p-1 border border-amber-600/40 rounded-sm">
-                    <div className="relative overflow-hidden rounded-sm" style={{ width: '280px', height: '340px' }}>
-                      <img
-                        src="/lawkeeper_saint_denis.png"
-                        alt="The Lawkeeper of Saint Denis"
-                        className="w-full h-full object-cover object-top"
-                        style={{ filter: 'contrast(1.05) brightness(0.98)' }}
-                      />
-                      {/* Vignette over photo */}
-                      <div
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                          background:
-                            'radial-gradient(ellipse at center, transparent 50%, rgba(20,10,5,0.6) 100%)',
-                        }}
-                      />
-                      {/* Light leak */}
-                      <div className="absolute top-0 left-0 w-1/2 h-1/3 bg-gradient-to-br from-amber-300/20 to-transparent pointer-events-none" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Corner ornaments on frame */}
-                <Corner className="absolute -top-1 -left-1 w-6 h-6 text-amber-300/90" />
-                <Corner className="absolute -top-1 -right-1 w-6 h-6 text-amber-300/90 -scale-x-100" />
-                <Corner className="absolute -bottom-1 -left-1 w-6 h-6 text-amber-300/90 -scale-y-100" />
-                <Corner className="absolute -bottom-1 -right-1 w-6 h-6 text-amber-300/90 -scale-100" />
+              {/* Subtle decorative ring behind portrait */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-[360px] h-[360px] rounded-full border border-amber-700/20" />
+                <div className="absolute w-[380px] h-[380px] rounded-full border border-dashed border-amber-700/10 animate-[spin_80s_linear_infinite]" />
               </div>
 
-              {/* Hanging nail at top */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-amber-900 shadow-[0_2px_4px_rgba(0,0,0,0.6),inset_1px_1px_2px_rgba(251,191,36,0.5)]" />
-              <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-px h-4 bg-amber-900/60" />
+              {/* The image with feathered mask */}
+              <div className="relative" style={{ width: '380px', height: '460px' }}>
+                <img
+                  src="/cowboy_businessman.png"
+                  alt="The Lawkeeper of Saint Denis"
+                  className="w-full h-full object-cover object-top"
+                  style={{
+                    filter: 'contrast(1.08) brightness(1.02) saturate(1.1) drop-shadow(0 20px 40px rgba(0,0,0,0.6))',
+                    WebkitMaskImage:
+                      'radial-gradient(ellipse 70% 75% at 50% 45%, #000 45%, rgba(0,0,0,0.6) 70%, transparent 100%)',
+                    maskImage:
+                      'radial-gradient(ellipse 70% 75% at 50% 45%, #000 45%, rgba(0,0,0,0.6) 70%, transparent 100%)',
+                  }}
+                />
 
-              {/* Brass nameplate */}
-              <div
-                className="absolute -bottom-5 left-1/2 -translate-x-1/2 px-6 py-1.5 rounded-sm border border-amber-700"
+                {/* Warm color wash on top */}
+                <div
+                  className="absolute inset-0 pointer-events-none mix-blend-overlay"
+                  style={{
+                    background:
+                      'radial-gradient(ellipse at 30% 20%, rgba(251,191,36,0.25), transparent 60%)',
+                  }}
+                />
+
+                {/* Embers/smoke from below */}
+                <div
+                  className="absolute -bottom-4 inset-x-0 h-32 pointer-events-none"
+                  style={{
+                    background:
+                      'radial-gradient(ellipse at center top, rgba(180,90,30,0.4), transparent 70%)',
+                    filter: 'blur(20px)',
+                  }}
+                />
+              </div>
+
+              {/* Floating brass nameplate (no frame) */}
+              <motion.div
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-8 py-2 rounded-sm border border-amber-600/60 backdrop-blur-sm"
                 style={{
                   background:
-                    'linear-gradient(180deg, #c08a3e 0%, #6b3410 100%)',
+                    'linear-gradient(180deg, rgba(192,138,62,0.85) 0%, rgba(107,52,16,0.85) 100%)',
                   boxShadow:
-                    'inset 0 1px 0 rgba(251,191,36,0.5), 0 4px 10px rgba(0,0,0,0.6)',
+                    'inset 0 1px 0 rgba(251,191,36,0.5), 0 8px 24px rgba(0,0,0,0.7)',
                 }}
               >
                 <span
-                  className="text-[10px] font-black tracking-[0.35em] uppercase text-amber-950"
-                  style={{ fontFamily: "'Cinzel', serif" }}
+                  className="text-[10px] font-black tracking-[0.4em] uppercase text-amber-50"
+                  style={{ fontFamily: "'Cinzel', serif", textShadow: '1px 1px 2px rgba(0,0,0,0.6)' }}
                 >
-                  The Lawkeeper
+                  ✦ The Lawkeeper ✦
                 </span>
-              </div>
+              </motion.div>
             </div>
 
             {/* Side Text — Wanted Poster Style */}
